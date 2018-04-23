@@ -1,0 +1,120 @@
+server:
+  port: 8222
+
+spring:
+  application:
+    name: coolbit-admin-server
+  http:
+    multipart:
+      maxFileSize: 10Mb
+      maxRequestSize: 100Mb
+  datasource:
+    druid:
+      url: jdbc:mysql://101.132.182.194:9899/dbyscwstx
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: ArM%BG@u@mhWv0TA
+      initial-size: 20
+      max-active: 100
+      min-idle: 5
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000
+      validation-query: SELECT 'x'
+      filters: stat,slf4j
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    encoding: utf-8
+    mode: LEGACYHTML5
+    prefix: classpath:/templates
+  redis:
+    cluster:
+      nodes: 192.168.1.139:6479,192.168.1.138:6479,192.168.1.137:6479
+    database: 0
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://192.168.1.178:8669/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+
+management:
+  security:
+    enabled: false
+
+mybatis:
+  check-config-location: true                          #配置校验（true/false）
+  config-location: classpath:mybatis-config.xml         #mybatis配置文件
+  mapper-locations: classpath*:mapper/**/*.xml    #mapper xml配置路径
+#MQ
+mq-suffix: _178
+mq-PUSH_TOPIC: yhyy_push
+mq-PUSH_PRODUCER_ID: PID_push
+mq-PUSH_TAG: PUSHNOTIFICATION
+mq-ONSADDR: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+mq-PRODUCERID_SEARCH: PID_SOLRINDEX
+mq-TOPIC_SEARCH: yhyy-search
+mq-SEARCH_CONSUMER_ID: CID_SOLRINDEX
+accessKey: LTAIp2gpRJI0gvKu
+secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
+odr_refund_topic: refund
+odr_refund_producer_id: PID_refund
+odr_refund_tag: refund_tag
+# 商品详情链接地址
+productUrl: https://testwww.yuehuayueyou.com/web/shopMall/products/productDetail.html?proId=
+
+#通知
+notification:
+  link: https://testtm.yuehuayueyou.com/xiangqing
+
+#会员实名认证,身份证验证是否开启
+memberIdentity: 1
+
+#上传图片路径
+manageName: manage
+
+#极光 true 为开发环境, false 为测试环境
+isDevelop: false
+
+
+ribbon:
+  ReadTimeout: 300000              #请求处理的超时时间
+  ConnectTimeout: 10000           #ribbon请求连接的超时时间
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 30000
+
+
+#购物车
+cartitem_topic: CartItemUpdate
+cartitem_producer_id: PID_CartItemUpdate
+cartitem_update_tag: CartItemTag
+
+#是否使用user_approve表
+userApproveIsStatus: 0
+
+
+##极光push 阿里测试
+PushAppkey: 5b7140c1dd618c50f8988e59
+PushAppmastersecret: 73751abba7120d42df1978fd

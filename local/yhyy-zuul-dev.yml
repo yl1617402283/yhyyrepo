@@ -1,0 +1,72 @@
+spring:
+  application:
+    name: yhyy-zuul
+  http:
+    multipart:
+      maxFileSize: 10Mb
+      maxRequestSize: 100Mb
+  redis:
+    cluster:
+      nodes: 192.168.1.139:6479,192.168.1.138:6479,192.168.1.137:6479
+    database: 0
+    timeout: 666
+    pool:
+      max-active: 666
+      max-wait: 1000
+      min-idle: 36
+      max-idle: 66
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://192.168.1.178:8669/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+    prefer-ip-address: true
+zuul:
+  routes:
+    yhyy-bs-acc: /acc/**
+    yhyy-bs-cod: /cod/**
+    yhyy-bs-mda: /mda/**
+    yhyy-bs-odr: /odr/**
+    yhyy-bs-rpo: /rpo/**
+    yhyy-bs-sca: /sca/**
+    yhyy-bs-usr: /usr/**
+    yhyy-solr: /solr/**
+    spring-cloud-producer: /spring-cloud-producer/**
+    yhyy-front-admin-2.0: /admin2.0/**
+    yhyy-front-admin: /admin/**
+
+  host:
+    connect-timeout-millis: 30000
+    socket-timeout-millis: 60000
+ribbon:
+  ReadTimeout: 30000              #请求处理的超时时间
+  ConnectTimeout: 30000           #ribbon请求连接的超时时间
+  MaxAutoRetries: 3               #对当前实例的重试次数
+  MaxAutoRetriesNextServer: 1    #对下个实例的重试次数
+  MaxConnectionsPerHost: 1500    #最大连接数
+  MaxTotalConnections: 1000      #最大活动连接数
+
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 60000
+
+server:
+  port: 8060
+  tomcat:
+    max-threads: 3000
+mq:
+  suffix: _178
+  url: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+  accessKey: LTAIp2gpRJI0gvKu
+  secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
+zFilterCheck: 1
+zFilterContent: u/logOut,u/login,u/getTempToken,u/getSaltRand,u/register,u/loginByVercode,u/loginOfterCkeck,operateCenter/getOperates,operateCenter/getOperateByOperateUsername,u/getUsersByUsernameLeft,operateCenter/getNearOperateCenterCount,operateCenter/getNearOperateCenterForPage,u/getNearAssistForPage,u/checkUserByUsername,u/weChatBindingOldUser,u/getAssist,u/weChatLogin,u/weChatBinding,u/weChatBindingLogin,u/checkVeriCode,u/checkUserMobile,product/listCategory23,product/category,product/listPrductEvaluation,product/getPrductDetail,product/listPropByProductItemList,product/getProductPriceByPorp,product/listPropValueByPropId,product/listProductBrand,product/getChildCategory,product/getVipProductByNo,product/getVipProduct,product/getEvaluationBySupplierId,product/getUpCategory,product/listSupplierProductCategory,area/getProvince,area/getCity,area/getAreaByCode,usr/getShopShareUrl,address/getStoreSelfReceiveAddress,operateCenter/selectAgreementByName,sendCode/sendCode,oauth/openweixin/wechat_oauth,oauth/openweixin/wechat_web,oauth/openweixin/receive_ticket,oauth/openweixin/receive_ticket_web,home/listNotice,advert/listAdvertCat,feignSolr/guessUserLike,product/getProductStoreUserSales,feignSolr/queryProductList,feignSolr/querySolrMerchant,feignSolr/queryHotWords,feignSolr/querySolrSuggest,staffEntrance/login,im/message/copy,putBlock,oauth/openweixin/wechat_web_binding,oauth/openweixin/receive_ticket_web_binding,app/version/queryNewestVersionInfo,u/getCustomQRCode,menu/listMenu,advert/getAdvertCat,oauth/openweixin/wechat_binding,oauth/openweixin/receive_ticket_binding,home/getNotice,oauth/openweixin/getTicket,help/queryHelpCoreCategory,help/queryHelpDescById,product/getProductDetail,common/isShow,common/iosVersion,test/testHeaderToken,storeUser/loadCustomerServiceTel

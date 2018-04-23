@@ -1,0 +1,91 @@
+spring:
+  application: 
+    name: yhyy-solr
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+    consumer:
+      key-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+  datasource:                           # Mabtis数据源，用于主库操作
+    druid:
+      url: jdbc:mysql://101.132.182.194:9899/dbyscwstx
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: ArM%BG@u@mhWv0TA
+      initial-size: 20  #初始化连接数
+      max-active: 100  #最大连接池数量
+      min-idle: 5  #最小连接池数量
+      max-wait: 60000  #获取连接时最大等待时间
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000  #连接保持空闲而不被驱逐的最小时间
+      validation-query: SELECT 'x'  #用来检测连接是否有效的SQL
+      filters: stat,slf4j
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:  #关闭监控页面
+        enabled: false
+      web-stat-filter:  #关闭采集数据功能
+        enabled: false
+  redis:
+    cluster:
+      nodes: 192.168.1.139:6479,192.168.1.138:6479,192.168.1.137:6479
+    database: 0
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
+  zipkin:
+    base-url: http://192.168.1.178:9666
+  sleuth:
+    sampler:
+      percentage: 1
+
+management:
+  security:
+    enabled: false
+
+#service discovery url
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://192.168.1.178:8669/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+server:
+  port: 9999
+
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
+ribbon:
+  ConnectTimeout: 30000
+  ReadTimeout: 60000
+
+mybatis:
+  check-config-location: true                          #配置校验（true/false）
+  config-location: classpath:mybatis-config.xml         #mybatis配置文件
+  mapper-locations: classpath*:mapper/readXml/*.xml
+elasticsearch.cluster.name: yhyy
+elasticsearch.server.arr: 192.168.1.133:9301,192.168.1.133:9302,192.168.1.133:9303
+indexName: collection
+MerchantTypeName: Merchant
+ProductTypeName: Product
+footIndexName: footcollection
+footTypeName: foot
+historyIndexName: historycollection
+historyTypeName: history
+ONSAddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+topicName: yhyy-search_178
+accessKey: LTAIp2gpRJI0gvKu
+secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
+consumerId: CID_SOLRINDEX_178
+#1是 可以看不到会员商品 2是查出会员商品
+isShow: 1
+esUrl: http://192.168.1.133:9201
+isShowMda: 1

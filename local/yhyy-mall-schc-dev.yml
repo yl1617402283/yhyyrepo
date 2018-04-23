@@ -1,0 +1,118 @@
+spring:
+  application: 
+    name: yhyy-mall-schc
+  datasource:
+    druid:
+      url: jdbc:mysql://101.132.182.194:9899/dbyscwstx?characterEncoding=utf-8&allowMultiQueries=true
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: ArM%BG@u@mhWv0TA
+      initial-size: 20
+      max-active: 100
+      min-idle: 5
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000
+      validation-query: SELECT 'x'
+      filters: stat,slf4j
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+  redis:
+    cluster:
+      nodes: 192.168.1.151:6479,192.168.1.138:6479,192.168.1.137:6479
+    database: 0
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
+
+management:
+  security:
+    enabled: false
+
+mybatis:
+  check-config-location: true                          #配置校验（true/false）
+  config-location: classpath:mybatis-config.xml         #mybatis配置文件
+  mapper-locations: classpath*:mapper/*.xml    #mapper xml配置路径
+
+logging:
+  level:
+    root:  INFO
+    com:
+      yhyy:
+        mall: INFO
+
+#service discovery url
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://192.168.1.178:8669/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+server:
+  port: 8686
+
+# MQ后缀
+mq:
+  suffix: _178
+
+# 商品定时任务
+mq-PRODUCERID_SEARCH: PID_SOLRINDEX_178
+mq-TOPIC_SEARCH: yhyy-search_178
+mq-CONSUMERID_SEARCH: CID_SOLRINDEX_178
+
+# MQ参数
+access_key: LTAIp2gpRJI0gvKu
+secret_key: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
+onsaddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+# 退款
+odr_refund_topic: refund_178
+odr_refund_producer_id: PID_refund_178
+odr_refund_tag: refund_tag_178
+# 库存
+update_inventory_topic: updateInventory_178
+update_inventory_producer_id: PID_updateInventory_178
+update_inventory_tag: updateInventory_tag_178
+# 确认收货分账
+odr_split_topic: pay_split_178
+odr_split_producer_id: PID_pay_split_178
+odr_split_tag: pay_split_tag_178
+# push
+push_topic: yhyy_push_178
+push_producer_id: PID_push_178
+push_tag: PUSHNOTIFICATION_178
+# 升级
+upgrade_topic: UserUpgrade_178
+upgrade_producer_id: PID_userUpgrade_178
+upgrade_tag: userUpgradeTag_178
+# 旧数据订单上线前处理 结算（星级订单）
+vip_data_topic: vip_data_old_178
+vip_data_producer_id: PID_vip_data_old_178
+vip_data_tag: vip_data_old_tag_178
+# serch
+PRODUCERID_SEARCH: PID_SOLRINDEX_178
+TOPIC_SEARCH: yhyy-search_178
+#增加销量search
+search_topic: yhyy-search_178
+search_producer_id: PID_SOLRINDEX_178
+search_tag: product_sell_num_178
+
+#初始化数据log文件位置
+init_log_file_name: yhyy-mall-job/initLog.log
+# 调用区块链url
+tx-url: http://106.14.158.48:9005/api/v1/rest/blockchain/putBlock
+# 区块链开关
+tx-msg-send-close: false
+# 区块链fcn
+fcn: createObj
+
+#百悟科技短信通道
+corp_id: wn8456
+corp_pwd: 5698sd
+corp_service: 1069003211601

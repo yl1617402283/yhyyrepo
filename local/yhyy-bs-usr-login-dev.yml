@@ -1,0 +1,101 @@
+spring:
+  application: 
+    name: yhyy-bs-usr-login
+  datasource:                           # Mabtis数据源，用于主库操作
+    # 使用druid数据源
+      url: jdbc:mysql://101.132.182.194:9899/dbyscwstx
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: ArM%BG@u@mhWv0TA
+      initial-size: 20  #初始化连接数
+      max-active: 100  #最大连接池数量
+      min-idle: 5  #最小连接池数量
+      max-wait: 60000  #获取连接时最大等待时间
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000  #连接保持空闲而不被驱逐的最小时间
+      validation-query: SELECT 'x'  #用来检测连接是否有效的SQL
+      filters: stat,slf4j
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:  #关闭监控页面
+        enabled: false
+      web-stat-filter:  #关闭采集数据功能
+        enabled: false
+  redis:
+      cluster:
+        nodes: 192.168.1.139:6479,192.168.1.138:6479,192.168.1.137:6479
+      database: 0
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+      timeout: 0
+
+  zipkin:
+    base-url: http://192.168.1.178:9666
+  sleuth:
+    sampler:
+      percentage: 1
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
+ribbon:
+  ConnectTimeout: 30000
+  ReadTimeout: 60000
+
+management:
+  security:
+    enabled: false
+
+mybatis:
+  check-config-location: true                          #配置校验（true/false）
+  config-location: classpath:mybatis-config.xml         #mybatis配置文件
+  mapper-locations: classpath*:com/yhyy/mapper/*.xml    #mapper xml配置路径
+
+logging:
+  level:
+    root:  WARN
+    com:
+      yhyy:
+        controller: INFO
+        service: INFO
+        dao: INFO
+
+#service discovery url
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://192.168.1.178:8669/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+    prefer-ip-address: true
+server:
+  port: 8886
+mq:
+  suffix: _178
+
+# 关闭IM注册
+im_sign_close: true
+# 用户密码错误冻结分钟数
+user_password_error_freeze_minute: 1
+#手机号开关（true代表ios不隐藏；false所有端都隐藏）
+check_mobile_ios: true
+
+#---
+#spring:
+#  profiles: peer1                                 # 指定profile=peer1
+#server:
+#  port: 8081
+#---
+#spring:
+#  profiles: peer2                                 # 指定profile=peer2
+#server:
+#  port: 8082
+#---
+#spring:
+#  profiles: peer3                                 # 指定profile=peer3
+#server:
+#  port: 8083

@@ -1,0 +1,174 @@
+spring:
+  application: 
+    name: yhyy-bs-usr-reg
+  datasource:                           # Mabtis数据源，用于主库操作
+    # 使用druid数据源
+      url: jdbc:mysql://101.132.182.194:9899/dbyscwstx
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: ArM%BG@u@mhWv0TA
+      initial-size: 20  #初始化连接数
+      max-active: 100  #最大连接池数量
+      min-idle: 5  #最小连接池数量
+      max-wait: 60000  #获取连接时最大等待时间
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000  #连接保持空闲而不被驱逐的最小时间
+      validation-query: SELECT 'x'  #用来检测连接是否有效的SQL
+      filters: stat,slf4j
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:  #关闭监控页面
+        enabled: false
+      web-stat-filter:  #关闭采集数据功能
+        enabled: false
+  redis:
+      cluster:
+        nodes: 192.168.1.139:6479,192.168.1.138:6479,192.168.1.137:6479
+      database: 0
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+      timeout: 0
+
+  zipkin:
+    base-url: http://192.168.1.178:9666
+    #base-url: http://101.132.158.228:9666
+  sleuth:
+    sampler:
+      percentage: 1
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
+ribbon:
+  ConnectTimeout: 30000
+  ReadTimeout: 60000
+
+management:
+  security:
+    enabled: false
+
+mybatis:
+  check-config-location: true                          #配置校验（true/false）
+  config-location: classpath:mybatis-config.xml         #mybatis配置文件
+  mapper-locations: classpath*:com/yhyy/mapper/*.xml    #mapper xml配置路径
+
+logging:
+  level:
+    root:  WARN
+    com:
+      yhyy:
+        controller: INFO
+        service: INFO
+        dao: INFO
+
+#service discovery url
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://192.168.1.178:8669/eureka/
+      #defaultZone: http://101.132.158.228:8669/eureka/
+      #defaultZone: http://101.132.158.228:8669/
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+    prefer-ip-address: true
+server:
+  port: 9888
+mq:
+  suffix: _178
+identity:
+  #merchNo: _000194502820238
+  merchNo: _001080000000045
+  #md5Key: abd5f14952b3326e47d1e111cb8636ee
+  md5Key: ac0fb263aab9b35b48ec7746d6cccc43
+  #des3Key: 69f444def05d7c8769f444de
+  des3Key: 8d3b48ae8bbfc6108d3b48ae
+  #url: http://111.203.189.69:8018/ServletServer/Jservlet
+  url: https://at.e-unionpay.com:8580/ServletServer/Jservlet
+  thirdClose: false
+
+wechat-redirectUrl: http://testapi.yuehuayueyou.com/v1/oauth/openweixin/receive_ticket
+wechat-appId: wx0bde1d3c4357dfdd
+wechat-appSecret: e84a08204b76cd9517a9ec5beff7fe0c
+wechat-scope: snsapi_userinfo
+wechat-redirectH5Url: https://testtm.yuehuayueyou.com
+wechat-authorURL: https://open.weixin.qq.com/connect/oauth2/authorize
+wechat-web-authorURL: https://open.weixin.qq.com/connect/qrconnect
+wechat-web-redirectUrl: http://testapi.yuehuayueyou.com/v1/oauth/openweixin/receive_ticket_web
+#wechat-web-redirectUrl: http://yuehuayueyou.com
+wechat-web-scope: snsapi_login
+wechat-web-appId: wx09660c7920a0c188
+wechat-web-appSecret: 4f71beaa782eae6b9edfa0d81deb4e9f
+wechat-backUrl: https://testtm.yuehuayueyou.com/wxLogin
+wechat-web-backUrl: http://testwww.yuehuayueyou.com/web/login/wecharCallBack.html
+wechat-web-binding-redirectUrl: http://testapi.yuehuayueyou.com/v1/oauth/openweixin/receive_ticket_web_binding
+wechat-web-binding-backUrl: http://testwww.yuehuayueyou.com/web/userCenter/userInfor/bandphone.html
+wechat-binding-redirectUrl: http://testapi.yuehuayueyou.com/v1/oauth/openweixin/receive_ticket_binding
+wechat-binding-backUrl: https://testtm.yuehuayueyou.com/relation
+tx-url: http://47.100.12.56:9005/api/v1/rest/blockchain/putBlock
+tx-msg-send-close: false
+# 升级
+onsaddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+upgrade_topic: UserUpgrade_178
+upgrade_consumer_id: CID_userUpgrade_178
+upgrade_tag: userUpgradeTag_178
+search_topic: yhyy-search_178
+search_producer_id: PID_SOLRINDEX_178
+search_tag: SEARCH_UPDATE_CLONE_178
+push_topic: yhyy_push_178
+push_producer_id: PID_push_178
+push_tag: PUSHNOTIFICATION_178
+accessKey: LTAIp2gpRJI0gvKu
+secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
+# 固定服务中心
+operate_center_fixed: false
+ac_new_user: false
+# 关闭IM注册
+im_sign_close: true
+# 是否关闭获取最近距离的用户   true为关闭
+near_user_close: false
+# 结算producer_id
+rmqaward_producer_id: PID_Settle2ProductorDev
+# 结算topic_id
+rmqaward_topic: settle2Dev
+# 是否调用第三方短信验证接口  true为调用云信验证接口
+check_real_vercode: true
+# 创建Im账号的开始条数
+min_im_create: 122000
+# 用户密码错误冻结分钟数
+user_password_error_freeze_minute: 1
+# 用户验证码错误超过次数
+user_vercode_error_count: 3
+#user_approve和new_user_approve合表开关 (true表示用合表的逻辑)
+merge_table: false
+#手机号开关（true代表ios不隐藏；false所有端都隐藏）
+check_mobile_ios: true
+#限制新疆手机号码和ip地址不允许注册，登录不受影响（true表示开关启动，限制新疆手机号码和ip地址不允许注册）
+check_mobile_ip: true
+#限制地区不允许注册(多个地区用逗号分隔;目前只对新疆进行禁用注册)
+disable_address: 新疆
+disable_address_no: 65
+
+#给积分推送消息MQ
+usr_upgrade_topic: YhyyUsrUpgrade_178
+usr_upgrade_producer_id: PID_YhyyUsrUpgrade_178
+usr_upgrade_tag: YhyyUsrUpgradeTag_178
+
+#---
+#spring:
+#  profiles: peer1                                 # 指定profile=peer1
+#server:
+#  port: 8081
+#---
+#spring:
+#  profiles: peer2                                 # 指定profile=peer2
+#server:
+#  port: 8082
+#---
+#spring:
+#  profiles: peer3                                 # 指定profile=peer3
+#server:
+#  port: 8083

@@ -1,0 +1,44 @@
+spring:
+  application: 
+    name: yhyy-push
+
+logging:
+  level:
+    root:  WARN
+    com:
+      yhyy:
+        controller: INFO
+        service: INFO
+
+#service discovery url
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.1.173:8669/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+    prefer-ip-address: true
+
+management:
+  security:
+    enabled: false
+
+server:
+  port: 8061
+
+#---
+#spring:
+#  profiles: peer1                                 # 指定profile=peer1
+#server:
+#  port: 8061
+#---
+#spring:
+#  profiles: peer2                                 # 指定profile=peer2
+#server:
+#  port: 8062
+#---
+#spring:
+#  profiles: peer3                                 # 指定profile=peer3
+#server:
+#  port: 8063

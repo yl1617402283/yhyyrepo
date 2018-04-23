@@ -1,0 +1,106 @@
+server:
+  port: 8629
+
+spring:
+  application:
+    name: coolbit-admn-web
+  http:
+    multipart:
+      maxFileSize: 10Mb
+      maxRequestSize: 100Mb
+  datasource:
+    druid:
+      url: jdbc:mysql://192.168.1.81:8066/coolbit
+      driver-class-name: com.mysql.jdbc.Driver
+      username: rel
+      password: BPyvgTcVtf$lBkA*
+      initial-size: 20
+      max-active: 100
+      min-idle: 5
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000
+      validation-query: SELECT 'x'
+      filters: stat,slf4j
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:  #关闭监控页面
+        enabled: true
+      web-stat-filter:  #关闭采集数据功能
+        enabled: false
+  thymeleaf:
+      cache: false
+      check-template-location: true
+      content-type: text/html
+      enabled: true
+      encoding: utf-8
+      mode: LEGACYHTML5
+      prefix: classpath:/templates
+  redis:
+    cluster:
+      nodes: 192.168.1.139:6479,192.168.1.138:6479,192.168.1.137:6479
+    database: 0
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
+  rabbitmq:
+    host: 101.132.158.118
+    port: 5672
+    username: admin
+    password: 123456
+  zipkin:
+    base-url: http://localhost:9666
+  sleuth:
+    sampler:
+      percentage: 1
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath*:mapper/**/*.xml
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8669/eureka/
+  instance:
+    prefer-ip-address: true
+
+
+# AWS
+SMS:
+  SMS_APP_KEY: coolbit
+  SMS_MASTER_SECRET: coolbit123
+  SMS_CUSTOMER_ID: 2847
+
+# 极光推送
+jpush:
+  PUSH_APP_KEY: 60ccdffd70d199f6ce1df92b
+  PUSH_MASTER_SECRET: 016b63f47324c6a949812826
+  #是否开启短信发送 1:开启 0:关闭
+  isSendSmsCode: 1
+  #短信验证码 1:四位验证码  2:六位验证码
+  smsCode: 1
+  #短信发送限制次数  一分钟 两次
+  smsCodeTime: 2
+
+management:
+  security:
+    enabled: false
+  context-path: /nonono
+
+
+IM:
+  #token有两种，管理员token和用户token。管理员token使用grant_type=client_credentials,用户token使用grant_type=password
+  GRANT_TYPE: client_credentials
+  #客户端id
+  CLIENT_ID: YXA6nz3LECagEeiTMUU6wIhn-g
+  #客户端密钥
+  CLIENT_SECRET: YXA6rJq8Hfhxg1oQUjxynGhdD3Rhveg
+  #公司组织号
+  ORG_NAME: 1108180313228651
+  #app名称
+  APP_NAME: coolbit
