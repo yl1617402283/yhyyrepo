@@ -1,0 +1,126 @@
+spring:
+  application: 
+    name: yhyy-bs-acc
+  datasource:                           # Mabtis数据源，用于主库操作
+    druid:
+      url: jdbc:mysql://drdsd267745t4p0r.drds.aliyuncs.com:3306/drds_bj_scph1230
+      driver-class-name: com.mysql.jdbc.Driver
+      username: drds_bj_scph1230
+      password: rmuZHgoF3J6XeZvB
+      #url: jdbc:mysql://drds42g89fs73g0z.drds.aliyuncs.com:3306/drds_bj_scyhyh20180130
+      #driver-class-name: com.mysql.jdbc.Driver
+      #username: drds_bj_scyhyh20180130
+      #password: hFeAiWfv2X8nGu4Z
+      initial-size: 20  #初始化连接数
+      max-active: 100  #最大连接池数量
+      min-idle: 5  #最小连接池数量
+      max-wait: 60000  #获取连接时最大等待时间
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000  #连接保持空闲而不被驱逐的最小时间
+      validation-query: SELECT 'x'  #用来检测连接是否有效的SQL
+      filters: stat,slf4j
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:  #关闭监控页面
+        enabled: true
+      web-stat-filter:  #关闭采集数据功能
+        enabled: true
+  redis:
+    host: r-uf61405c450dbc44.redis.rds.aliyuncs.com
+    password: S6PRNhepnmNY3Msr
+    port: 6379
+    database: 0
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
+ribbon:
+  ConnectTimeout: 30000
+  ReadTimeout: 60000
+
+management:
+  security:
+    enabled: false
+
+mybatis:
+  check-config-location: true                          #配置校验（true/false）
+  config-location: classpath:mybatis-config.xml         #mybatis配置文件
+  mapper-locations: classpath*:com/yhyy/mapper/**/*.xml
+
+#service discovery url
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://172.19.173.3:8669/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+    prefer-ip-address: true
+server:
+  port: 8283
+  connection-timeout: 10000 # 连接超时时间
+  tomcat:
+    max-threads: 60000
+    max-connections: 60000
+    max-http-post-size: 30720
+    accept-count: 20000
+    min-spare-threads: 100
+settle:
+  threadcount: 200
+settle2: 
+  award: 
+    topic: settle2Test
+    consumerid: CID_Settle2ConsumerTest
+    producerid: PID_Settle2ProductorTest
+  redis:
+    suffix: t_
+
+pay:
+  kq:
+    merchantAcctId: 1020993241301
+    bgUrl: http://101.132.185.3:8080/v1/kq/cb/doPcPayCallback
+    pageUrl: 
+    check:
+      cipher: 123123
+  lian:
+      NOTIFY_URL: http://testpayapi.yuehuayueyou.com/v1/pay/lian/ReceiveNotify
+      URL_RETURN: http://testpayapi.yuehuayueyou.com/v1/pay/lian/tongbuCallback
+      WAP_NOTIFY_URL: http://testpayapi.yuehuayueyou.com/v1/pay/lianwap/wapyibuNotify
+      WAP_URL_RETURN: http://testpayapi.yuehuayueyou.com/v1/pay/lianwap/waptongbuCallback
+      WAP_NOTIFY_URL_SECOND: http://testpayapi.yuehuayueyou.com/v1/pay/lianwapSecond/wapyibuNotify
+      WAP_URL_RETURN_SECOND: http://testpayapi.yuehuayueyou.com/v1/pay/lianwapSecond/waptongbuCallback
+      #引流送积分H5：
+      wap_buyScore_url: http://testtm.yuehuayueyou.com/buyScore
+      wap_recharge_url: http://testtm.yuehuayueyou.com/recharge
+      wap_shopping_url: http://testtm.yuehuayueyou.com/shopping
+      wap_upgrade_url: http://testtm.yuehuayueyou.com/upgrade
+      wap_qrCode_url: http://testtm.yuehuayueyou.com/qrCode
+      #pc
+      pc_buyScore_url: http://testwww.yuehuayueyou.com/buyScore
+      pc_recharge_url: http://testwww.yuehuayueyou.com/recharge
+      pc_shopping_url: http://testwww.yuehuayueyou.com/shopping
+      pc_upgrade_url: http://testwww.yuehuayueyou.com/upgrade
+mq:
+  suffix: _qa
+  mq_ONSAddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+  ACCESS_KEY: LTAIp2gpRJI0gvKu
+  SECRET_KEY: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
+  BLOCK_STATUS: DOWN
+transfer:
+  xpertime: 10
+  freezentime: 10
+  count: 10
+
+#图片存储路径
+pic:
+  url: https://yuehuapic.oss-cn-shanghai.aliyuncs.com/
+
+#面对面付款黑名单,收款人用户编号，多个时英文逗号分隔
+qr_code:
+  blacklist: 1710
