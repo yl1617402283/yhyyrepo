@@ -34,7 +34,7 @@ spring:
       min-idle: 0
     timeout: 0
   zipkin:
-    base-url: http://172.19.173.3:9666
+    base-url: http://172.19.173.76:9666
   sleuth:
     sampler:
       percentage: 1
@@ -64,7 +64,7 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://172.19.173.3:8669/eureka/
+      defaultZone: http://172.19.173.76:8669/eureka/
   instance:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 10
