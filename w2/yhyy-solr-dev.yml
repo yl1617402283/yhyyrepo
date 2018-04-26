@@ -95,10 +95,10 @@ footTypeName: foot
 historyIndexName: historycollection
 historyTypeName: history
 ONSAddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
-topicName: yhyy-search_qa
+topicName: yhyy-search_pre_on
 accessKey: LTAIp2gpRJI0gvKu
 secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
-consumerId: CID_SOLRINDEX_qa
+consumerId: CID_SOLRINDEX_pre_on
 #1是 可以看不到会员商品 2是查出会员商品
 isShow: 2
 esUrl: http://172.19.172.250:9200

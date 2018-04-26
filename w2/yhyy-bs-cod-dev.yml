@@ -80,7 +80,7 @@ server:
     min-spare-threads: 100
 # MQ后缀
 mq:
-  suffix: _qa
+  suffix: _pre_on
 
 yinliuProductIds: 1,2,3,4
 vipProductIds: 1,2,3,4

@@ -245,7 +245,7 @@ allscorepay:
 
 #消息队列
 mq:
-  suffix: _qa
+  suffix: _pre_on
   mq_ONSAddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
   ACCESS_KEY: LTAIp2gpRJI0gvKu
   SECRET_KEY: AfhWdaEw5zrIx9d08Z5058J4QCYEnv

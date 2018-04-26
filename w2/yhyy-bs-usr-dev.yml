@@ -74,7 +74,7 @@ eureka:
 server:
   port: 8887
 mq:
-  suffix: _qa
+  suffix: _pre_on
 identity:
   #merchNo: _000194502820238
   merchNo: _001080000000045
@@ -109,22 +109,22 @@ tx-url: http://47.100.12.56:9005/api/v1/rest/blockchain/putBlock
 tx-msg-send-close: false
 # 升级
 onsaddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
-upgrade_topic: UserUpgrade_qa
-upgrade_consumer_id: CID_userUpgrade_qa
-upgrade_tag: userUpgradeTag_qa
-search_topic: yhyy-search_qa
-search_producer_id: PID_SOLRINDEX_qa
-search_tag: SEARCH_UPDATE_CLONE_qa
-push_topic: yhyy_push_qa
-push_producer_id: PID_push_qa
-push_tag: PUSHNOTIFICATION_qa
+upgrade_topic: UserUpgrade_pre_on
+upgrade_consumer_id: CID_userUpgrade_pre_on
+upgrade_tag: userUpgradeTag_pre_on
+search_topic: yhyy-search_pre_on
+search_producer_id: PID_SOLRINDEX_pre_on
+search_tag: SEARCH_UPDATE_CLONE_pre_on
+push_topic: yhyy_push_pre_on
+push_producer_id: PID_push_pre_on
+push_tag: PUSHNOTIFICATION_pre_on
 accessKey: LTAIp2gpRJI0gvKu
 secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
 # 活积分升级
-upgrade_ac_topic: UserUpgradeAc_qa
-upgrade_ac_consumer_id: CID_userUpgradeAc_qa
-upgrade_ac_producer_id: PID_userUpgradeAc_qa
-upgrade_ac_tag: userUpgradeAcTag_qa
+upgrade_ac_topic: UserUpgradeAc_pre_on
+upgrade_ac_consumer_id: CID_userUpgradeAc_pre_on
+upgrade_ac_producer_id: PID_userUpgradeAc_pre_on
+upgrade_ac_tag: userUpgradeAcTag_pre_on
 # 固定服务中心
 operate_center_fixed: false
 ac_new_user: false
@@ -155,9 +155,9 @@ disable_address: 新疆
 disable_address_no: 65
 
 #给积分推送消息MQ
-usr_upgrade_topic: YhyyUsrUpgrade_qa
-usr_upgrade_producer_id: PID_YhyyUsrUpgrade_qa
-usr_upgrade_tag: YhyyUsrUpgradeTag_qa
+usr_upgrade_topic: YhyyUsrUpgrade_pre_on
+usr_upgrade_producer_id: PID_YhyyUsrUpgrade_pre_on
+usr_upgrade_tag: YhyyUsrUpgradeTag_pre_on
 
 #查询加密后的手机号和证件号码 false（未加密的） true （加密后的）
 gain_encrypt_field: true
