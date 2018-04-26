@@ -173,6 +173,10 @@ img_api_key: PYBoOmi7l_c383RHaSlc0dPtEl1TWUZ-
 #身份证图片识别  api_secret
 img_api_secret: PRwJkrlXJpQttRUhzJQRKRi8xOw9bT6A
 
+#
+feignclient:
+  user: 192.168.10.143:8632
+
 #---
 #spring:
 #  profiles: peer1                                 # 指定profile=peer1
