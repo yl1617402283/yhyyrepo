@@ -236,6 +236,13 @@ allscorepay:
   bindUrl: https://typ.yuehuayueyou.com/allscorepay/bindCard
   #绑卡支付页面
   openCardUrl: https://typ.yuehuayueyou.com/allscorepay/openCardPay
+
+# 银生宝
+unspay:
+  accountId: 2120180424093558001
+  key: 123456
+  quickPayUrl: http://114.80.54.74:8082/quickpay-front/quickPayWap/prePay
+
 #消息队列
 mq:
   suffix: _178
