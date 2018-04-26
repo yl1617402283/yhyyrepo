@@ -248,6 +248,7 @@ unspay:
   accountId: 2120180424093558001
   key: 31fme6cbapvs
   quickPayUrl: http://114.80.54.74:8082/quickpay-front/quickPayWap/prePay
+  callbackUrl: https://typ.yuehuayueyou.com/unspay/callbackApi
 
 #消息队列
 mq:
