@@ -3,7 +3,7 @@ spring:
     name: yhyy-mall-schc
   datasource:
     druid:
-      url: jdbc:mysql://172.19.172.248:9899/dbysc1108
+      url: jdbc:mysql://172.19.172.248:9899/mall_two
       driver-class-name: com.mysql.jdbc.Driver
       username: root
       password: ArM%BG@u@mhWv0TA
