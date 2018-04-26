@@ -246,7 +246,7 @@ allscorepay:
 # 银生宝
 unspay:
   accountId: 2120180424093558001
-  key: 31fme6CbApvs
+  key: 31fme6cbapvs
   quickPayUrl: http://114.80.54.74:8082/quickpay-front/quickPayWap/prePay
 
 #消息队列
