@@ -9,21 +9,25 @@ spring:
       maxFileSize: 10Mb
   datasource:
     druid:
-      url: jdbc:mysql://172.19.172.248:9899/dbysc1108
+      url: jdbc:mysql://172.19.172.248:9899/mall_two
       driver-class-name: com.mysql.jdbc.Driver
       username: root
       password: ArM%BG@u@mhWv0TA
-      initial-size: 20
-      max-active: 100
-      min-idle: 5
-      max-wait: 60000
+      initial-size: 20  #初始化连接数
+      max-active: 100  #最大连接池数量
+      min-idle: 5  #最小连接池数量
+      max-wait: 60000  #获取连接时最大等待时间
       time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 30000
-      validation-query: SELECT 'x'
+      min-evictable-idle-time-millis: 30000  #连接保持空闲而不被驱逐的最小时间
+      validation-query: SELECT 'x'  #用来检测连接是否有效的SQL
       filters: stat,slf4j
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
+      stat-view-servlet:  #关闭监控页面
+        enabled: false
+      web-stat-filter:  #关闭采集数据功能
+        enabled: false
   thymeleaf:
     cache: false
     check-template-location: true

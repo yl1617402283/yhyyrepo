@@ -10,25 +10,25 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
   datasource:
     druid:
-      url: jdbc:mysql://drdsd267745t4p0r.drds.aliyuncs.com:3306/drds_bj_scph1230
+      url: jdbc:mysql://172.19.172.248:9899/mall_two
       driver-class-name: com.mysql.jdbc.Driver
-      username: drds_bj_scph1230
-      password: rmuZHgoF3J6XeZvB
-      #url: jdbc:mysql://drds42g89fs73g0z.drds.aliyuncs.com:3306/drds_bj_scyhyh20180130
-      #driver-class-name: com.mysql.jdbc.Driver
-      #username: drds_bj_scyhyh20180130
-      #password: hFeAiWfv2X8nGu4Z
-      initialSize: 20
-      minIdle: 5
-      maxActive: 100
-      maxWait: 60000
-      timeBetweenEvictionRunsMillis: 60000
-      minEvictableIdleTimeMillis: 300000
-      validationQuery: SELECT 1 FROM DUAL
+      username: root
+      password: ArM%BG@u@mhWv0TA
+      initial-size: 20  #初始化连接数
+      max-active: 100  #最大连接池数量
+      min-idle: 5  #最小连接池数量
+      max-wait: 60000  #获取连接时最大等待时间
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000  #连接保持空闲而不被驱逐的最小时间
+      validation-query: SELECT 'x'  #用来检测连接是否有效的SQL
       filters: stat,slf4j
-      testWhileIdle: true
-      testOnBorrow: false
-      testOnReturn: false
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:  #关闭监控页面
+        enabled: false
+      web-stat-filter:  #关闭采集数据功能
+        enabled: false
   redis:
     host: r-uf61405c450dbc44.redis.rds.aliyuncs.com
     password: S6PRNhepnmNY3Msr
@@ -41,7 +41,7 @@ spring:
       min-idle: 0
     timeout: 0
   zipkin:
-    base-url: http://172.19.173.3:9666
+    base-url: http://172.19.173.76:9666
   sleuth:
     sampler:
       percentage: 1
@@ -68,7 +68,7 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://172.19.173.3:8669/eureka/
+      defaultZone: http://172.19.173.76:8669/eureka/
   instance:
     hostname: web-12   # 指定该Eureka实例的主机名
     prefer-ip-address: true
@@ -95,10 +95,10 @@ footTypeName: foot
 historyIndexName: historycollection
 historyTypeName: history
 ONSAddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
-topicName: yhyy-search_qa
+topicName: yhyy-search_pre_on
 accessKey: LTAIp2gpRJI0gvKu
 secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
-consumerId: CID_SOLRINDEX_qa
+consumerId: CID_SOLRINDEX_pre_on
 #1是 可以看不到会员商品 2是查出会员商品
 isShow: 2
 esUrl: http://172.19.172.250:9200

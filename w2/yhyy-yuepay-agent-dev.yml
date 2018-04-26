@@ -5,10 +5,10 @@ spring:
     name: yhyy-yuepay-agent
   datasource:
     druid:
-      url: jdbc:mysql://drdsd267745t4p0r.drds.aliyuncs.com:3306/drds_bj_scph1230
+      url: jdbc:mysql://172.19.172.248:9899/mall_two
       driver-class-name: com.mysql.jdbc.Driver
-      username: drds_bj_scph1230
-      password: rmuZHgoF3J6XeZvB
+      username: root
+      password: ArM%BG@u@mhWv0TA
       initial-size: 20  #初始化连接数
       max-active: 100  #最大连接池数量
       min-idle: 5  #最小连接池数量
@@ -46,7 +46,7 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://172.19.173.3:8669/eureka/
+      defaultZone: http://172.19.173.76:8669/eureka/
   instance:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 10
@@ -69,3 +69,15 @@ agent :
       singlePayUrl: https://pg.openepay.com/gateway/singleagentpay
       #代付查询接口
       singPayQueryUrl: https://query.openepay.com/mchtoq/agentPaySingleQuery
+    #商银信
+      syx:
+        #商户编号
+        merchantId: "001018041304657"
+        #公匙
+        AllscorePublicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCK7Uy5ZWqS6cDVzkzZWatBo+M0fYJtSpgONiYL5iX8eXTA8o5qHgkaLMnYHBSsxA6AaMRxpgtHVUCSVHVFTKVZ179/zRODxTitrm/BPRFzTaiUa6cYWkAn1jy0zaHlRQDkPfdfUH8bGqenMYaGluRMu+F5f1qrJCQncAfBjdy7GQIDAQAB
+        #私匙
+        MerchantPrivateKey: MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAMz0+jLs4jVnGnLpJFVJz3AiPEHa4nIQc2jM5MBb4dz2nh8cs/wtb3H/Vppfoi6esZ0FQtKIox8Bi95DnTmp4ToKB7NSsszHtEdbYAhkUk6EiOdiYjsZZBbDth7tgN6jD5plorcbTsRW4Ky+0mp3Az8bymAcKsWtTcdsAVX7WpI7AgMBAAECgYEAysFatoBTM+NAbgcoE1uGY/bqR3fC5nZRxY5UidsbsJ0kRcD+aO2Fv2+K/AK5jYceTCjFN0NGo8jC1mlrI31kOV/0LhN4SjPdrbaW8F4TL4zuPRzIaeRu0qH/rVGZYZdEZxfwhjOyKorYhRipbMpobSFWKN3R55jImPPvEiRUj6kCQQD9IA2GRaB6N0m8dnkWnTO3LPj+C+DsgPLa4HC8h9PuaCsc/Ph3qPAHIwv3VJahJlZDm55XnOlEVhmtpB1SwxyXAkEAz0jgxblm9msBp7kaR1ULYujSPwZc11yQSJ5nE2gmobFfNitifF2WsYUTinSyTvY93ujw19kSh+Ztosl31rBX/QJAfw4Xu843PyGBYZgWL8O4sblhQiO0QwJ25GbEL93+Ay1GdsaD8Yxa7zooR32uHjWgF0+Fq3SXojWVrhMypNhLAQJAMZpsB4TlicRzofJewoEsd1/lqCVapELHWElnuzIqRHlQooLhT4eJ3zNMSM7COLkedzBhKhYNJC5VQCZcIikS9QJAJJxgHKZ/K/1BeobAlnh0bzvqNFMtAI2Bu2j4Y/aH3z776HGkxxJ9HQmzRhWLZ5Ac0xo1qRJHy2OmKTmZsOgXmA==
+        #代付地址
+        agentUrl: https://paymenta.allscore.com/olgateway/agentpay/singleAgentPay.htm
+        #代付查询地址
+        agentQueryUrl: https://paymenta.allscore.com/olgateway/agentpay/querySingleAgentPay.htm

@@ -5,21 +5,25 @@ spring:
     name: yhyy-devops-web
   datasource:
     druid:
-      url: jdbc:mysql://drdsd267745t4p0r.drds.aliyuncs.com:3306/drds_bj_scph1230
+      url: jdbc:mysql://172.19.172.248:9899/mall_two
       driver-class-name: com.mysql.jdbc.Driver
-      username: drds_bj_scph1230
-      password: rmuZHgoF3J6XeZvB
-      initial-size: 20
-      max-active: 100
-      min-idle: 5
-      max-wait: 60000
+      username: root
+      password: ArM%BG@u@mhWv0TA
+      initial-size: 20  #初始化连接数
+      max-active: 100  #最大连接池数量
+      min-idle: 5  #最小连接池数量
+      max-wait: 60000  #获取连接时最大等待时间
       time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 30000
-      validation-query: SELECT 'x'
+      min-evictable-idle-time-millis: 30000  #连接保持空闲而不被驱逐的最小时间
+      validation-query: SELECT 'x'  #用来检测连接是否有效的SQL
       filters: stat,slf4j
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
+      stat-view-servlet:  #关闭监控页面
+        enabled: false
+      web-stat-filter:  #关闭采集数据功能
+        enabled: false
   thymeleaf:
     cache: false
     check-template-location: true
@@ -50,20 +54,20 @@ eureka:
     eviction-interval-timer-in-ms: 2000
   client:
     serviceUrl:
-      defaultZone: http://172.19.173.3:8669/eureka/
+      defaultZone: http://172.19.173.76:8669/eureka/
 mq:
   onsaddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
   access_key: LTAIp2gpRJI0gvKu
   secret_key: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
-  odr_split_topic: pay_split_qa
-  odr_split_producer_id: PID_pay_split_qa
-  odr_split_tag: pay_split_tag_qa
-  upgrade_topic: UserUpgrade_qa
-  upgrade_producer_id: PID_userUpgrade_qa
-  upgrade_tag: userUpgradeTag_qa
-  odr_refund_topic: refund_qa
-  odr_refund_producer_id: PID_refund_qa
-  odr_refund_tag: refund_tag_qa
+  odr_split_topic: pay_split_pre_on
+  odr_split_producer_id: PID_pay_split_pre_on
+  odr_split_tag: pay_split_tag_pre_on
+  upgrade_topic: UserUpgrade_pre_on
+  upgrade_producer_id: PID_userUpgrade_pre_on
+  upgrade_tag: userUpgradeTag_pre_on
+  odr_refund_topic: refund_pre_on
+  odr_refund_producer_id: PID_refund_pre_on
+  odr_refund_tag: refund_tag_pre_on
 
 #MQ
 suffix: _178

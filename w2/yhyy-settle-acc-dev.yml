@@ -6,12 +6,10 @@ spring:
     name: yhyy-settle-acc
   datasource:
     druid:
-      url: jdbc:mysql://rm-uf6yn1yga21gc3fq81o.mysql.rds.aliyuncs.com:3306/drds_bj_scph1230_cmiq_0000
+      url: jdbc:mysql://172.19.172.248:9899/mall_two
       driver-class-name: com.mysql.jdbc.Driver
-      #username: root
-      #password: ArM%BG@u@mhWv0TA
-      username: drds_bj_scph1230
-      password: dWkSfAIW53CJRLUy
+      username: root
+      password: ArM%BG@u@mhWv0TA
       initial-size: 20  #初始化连接数
       max-active: 100  #最大连接池数量
       min-idle: 5  #最小连接池数量
@@ -48,14 +46,14 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://172.19.173.3:8669/eureka/
+      defaultZone: http://172.19.173.76:8669/eureka/
   instance:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 10
     prefer-ip-address: true
 
 mq:
-  suffix: _qa
+  suffix: _pre_on
   mq_ONSAddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
   ACCESS_KEY: LTAIp2gpRJI0gvKu
   SECRET_KEY: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
