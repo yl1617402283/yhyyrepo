@@ -174,7 +174,7 @@ img_api_key: PYBoOmi7l_c383RHaSlc0dPtEl1TWUZ-
 img_api_secret: PRwJkrlXJpQttRUhzJQRKRi8xOw9bT6A
 
 #
-feignclient_user: http://192.168.10.70:8632/
+feignclient_user: http://192.168.10.70:8632/v1/user/storeLogin
 
 #---
 #spring:
