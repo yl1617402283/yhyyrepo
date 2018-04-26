@@ -151,4 +151,5 @@ PushAppmastersecret: 73751abba7120d42df1978fd
 corp_id: yh6201
 corp_pwd: egeg86
 corp_service: 106900321202
+bw_sms_url: http://client.cloud.hbsmservice.com:8080/sms_send2.do
 
