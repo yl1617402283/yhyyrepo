@@ -175,7 +175,7 @@ img_api_secret: PRwJkrlXJpQttRUhzJQRKRi8xOw9bT6A
 
 #
 feignclient_user: http://192.168.10.70:8632/v1/user/storeLogin
-
+feignclient_user_tn: http://192.168.10.70:8632/v1/user/storeLoginByTokenUserName
 #---
 #spring:
 #  profiles: peer1                                 # 指定profile=peer1
