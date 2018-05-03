@@ -173,8 +173,8 @@ img_api_key: PYBoOmi7l_c383RHaSlc0dPtEl1TWUZ-
 img_api_secret: PRwJkrlXJpQttRUhzJQRKRi8xOw9bT6A
 
 #
-feignclient_user: http://47.100.114.104:8667/usr/v1/user/storeLogin
-
+feignclient_user: http://172.19.173.65:18667/usr/v1/user/storeLogin
+feignclient_user_tn: http://172.19.173.65:18667/usr/v1/user/storeLoginByTokenUserName
 #spring:
 #  profiles: peer1                                 # 指定profile=peer1
 #server:
