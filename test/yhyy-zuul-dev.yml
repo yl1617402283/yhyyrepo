@@ -37,6 +37,11 @@ spring:
       max-wait: 1000
       min-idle: 36
       max-idle: 66
+  zipkin:
+    base-url: http://localhost:9000
+  sleuth:
+    sampler:
+      percentage: 1.0
 eureka:
   client:
     healthcheck:
