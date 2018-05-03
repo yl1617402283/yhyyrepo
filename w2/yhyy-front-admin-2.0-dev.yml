@@ -40,7 +40,7 @@ spring:
     mode: LEGACYHTML5
     prefix: classpath:/templates
   redis:
-    host: r-uf6afa95ad060204.redis.rds.aliyuncs.com
+    host: r-uf61405c450dbc44.redis.rds.aliyuncs.com
     password: S6PRNhepnmNY3Msr
     port: 6379
     database: 0
