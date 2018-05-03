@@ -1,9 +1,10 @@
 server:
-  port: 8222
-
+  port: 8169
+  tomcat:
+    max-http-post-size: 800720
 spring:
   application:
-    name: coolbit-admin-server
+    name: yhyy-front-admin-2.0
   http:
     multipart:
       maxFileSize: 10Mb
@@ -59,7 +60,7 @@ mybatis:
   mapper-locations: classpath*:mapper/**/*.xml    #mapper xml配置路径
 
 #MQ
-mq-suffix: _pre_on
+mq-suffix: _qa
 mq-PUSH_TOPIC: yhyy_push
 mq-PUSH_PRODUCER_ID: PID_push
 mq-PUSH_TAG: PUSHNOTIFICATION
@@ -98,6 +99,8 @@ hystrix:
                 isolation:
                     thread:
                         timeoutInMilliseconds: 30000
+
+
 
 #购物车
 cartitem_topic: CartItemUpdate
