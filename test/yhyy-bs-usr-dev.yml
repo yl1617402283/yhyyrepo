@@ -163,6 +163,12 @@ usr_upgrade_topic: YhyyUsrUpgrade_qa
 usr_upgrade_producer_id: PID_YhyyUsrUpgrade_qa
 usr_upgrade_tag: YhyyUsrUpgradeTag_qa
 
+# 更新用户信息通知钱包
+ac_user_receive_topic: AcUserReceive_qa
+ac_user_receive_consumer_id: CID_AcUserReceive_qa
+ac_user_receive_producer_id: PID_AcUserReceive_qa
+ac_user_receive_tag: AcUserReceiveTag_qa
+
 #查询加密后的手机号和证件号码 false（未加密的） true （加密后的）
 gain_encrypt_field: true
 #插入手机号和证件号码只插入加密后的 false（新老字段都插入） true（只插入新字段，不插入旧字段）加密数据性能稳定删除数据库字段后打开）
@@ -175,6 +181,7 @@ img_api_secret: PRwJkrlXJpQttRUhzJQRKRi8xOw9bT6A
 #
 feignclient_user: http://172.19.173.65:18667/usr/v1/user/storeLogin
 feignclient_user_tn: http://172.19.173.65:18667/usr/v1/user/storeLoginByTokenUserName
+feignclient_user_base: http://172.19.173.65:18667/usr
 #spring:
 #  profiles: peer1                                 # 指定profile=peer1
 #server:
