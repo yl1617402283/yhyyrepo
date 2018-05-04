@@ -1,0 +1,22 @@
+server:
+  port: 8890
+
+spring:
+  application:
+    name: yhyy-bs-agent
+
+master:
+  datasource:
+    url: jdbc:mysql://101.132.182.194:9899/dbyscwstx
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: ArM%BG@u@mhWv0TA
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.1.178:8669/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+    prefer-ip-address: true
