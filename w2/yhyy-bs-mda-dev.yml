@@ -156,7 +156,9 @@ msg_prefix: huaxin_
 PushAppkey: 5b7140c1dd618c50f8988e59
 PushAppmastersecret: 73751abba7120d42df1978fd
 
+
 #百悟科技短信通道
 corp_id: yh6201
 corp_pwd: egeg86
 corp_service: 106900321202
+bw_sms_url: http://client.cloud.hbsmservice.com:8080/sms_send2.do
