@@ -27,8 +27,8 @@ spring:
       maxFileSize: 10Mb
       maxRequestSize: 100Mb
   redis:
-    host: r-uf61405c450dbc44.redis.rds.aliyuncs.com
-    password: S6PRNhepnmNY3Msr
+    host: 192.168.1.21
+    password:
     port: 6379
     database: 0
     timeout: 666
