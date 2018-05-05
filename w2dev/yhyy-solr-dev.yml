@@ -68,7 +68,7 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://172.19.173.76:8669/eureka/
+      defaultZone: http://127.0.0.1:8669/eureka/
   instance:
     hostname: web-12   # 指定该Eureka实例的主机名
     prefer-ip-address: true
