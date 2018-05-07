@@ -13,7 +13,7 @@ master:
     password: ArM%BG@u@mhWv0TA
     initial-size: 20  #初始化连接数
     max-active: 100  #最大连接池数量
-    min-idle: 5  #最小连接池数量
+    min-idle: 10  #最小连接池数量
     max-wait: 60000  #获取连接时最大等待时间
     time-between-eviction-runs-millis: 60000
     min-evictable-idle-time-millis: 30000  #连接保持空闲而不被驱逐的最小时间
