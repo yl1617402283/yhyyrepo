@@ -249,7 +249,9 @@ unspay:
   key: 31fme6cbapvs
   quickPayUrl: http://quickpay.unspay.com/quickpay-front/quickPayWap/prePay
   callbackUrl: https://typ.yuehuayueyou.com/unspay/callbackApi
-
+  agent:
+    payAgentUrl: http://pay.unspay.com:8081/delegate-pay-front/delegatePay/fourElementsPay
+    payAgentQueryUrl: http://pay.unspay.com:8081/delegate-pay-front/delegatePay/queryOrderStatus
 #消息队列
 mq:
   suffix: _qa
