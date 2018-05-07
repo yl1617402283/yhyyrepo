@@ -33,8 +33,8 @@ spring:
     mode: LEGACYHTML5
     prefix: classpath:/templates
   redis:
-    host: r-uf61405c450dbc44.redis.rds.aliyuncs.com
-    password: S6PRNhepnmNY3Msr
+    host: 192.168.1.21
+    password:
     port: 6379
     database: 0
     pool:
@@ -54,7 +54,7 @@ eureka:
     eviction-interval-timer-in-ms: 2000
   client:
     serviceUrl:
-      defaultZone: http://172.19.173.76:8669/eureka/
+      defaultZone: http://127.0.0.1:8669/eureka/
 mq:
   onsaddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
   access_key: LTAIp2gpRJI0gvKu

@@ -75,3 +75,11 @@ agent :
       agentUrl: https://paymenta.allscore.com/olgateway/agentpay/singleAgentPay.htm
       #代付查询地址
       agentQueryUrl: https://paymenta.allscore.com/olgateway/agentpay/querySingleAgentPay.htm
+
+# 银生宝
+unspay:
+  agent:
+    accountId: 2120180424093558001
+    key: 31fme6cbapvs
+    payAgentUrl: http://pay.unspay.com:8081/delegate-pay-front/delegatePay/fourElementsPay
+    payAgentQueryUrl: http://pay.unspay.com:8081/delegate-pay-front/delegatePay/queryOrderStatus
