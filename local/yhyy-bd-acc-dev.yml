@@ -3,9 +3,9 @@ spring:
     name: yhyy-bd-acc
   datasource:                           # Mabtis数据源，用于主库操作
     druid: 
-      url: jdbc:mysql://101.132.192.95:4000/testdb?useUnicode=true&characterEncoding=utf8&useSSL=true
+      url: jdbc:mysql://101.132.182.194:9899/dbyscwstx
       username: root
-      password: ae2366d2
+      password: ArM%BG@u@mhWv0TA
       driver-class-name: com.mysql.jdbc.Driver
       initial-size: 20
       max-active: 100
