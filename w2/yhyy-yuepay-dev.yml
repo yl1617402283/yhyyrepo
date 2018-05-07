@@ -243,6 +243,12 @@ allscorepay:
   #绑卡支付页面
   openCardUrl: https://typ.yuehuayueyou.com/allscorepay/openCardPay
 
+#四方
+square:
+  merCode: 330100600021
+  squarePayUrl: http://47.98.210.208:8080/cashierweb/service/smk/gateway/makeOrder.do
+  callbackUrl: https://typ.yuehuayueyou.com/square/callbackApi
+
 #消息队列
 mq:
   suffix: _pre_on

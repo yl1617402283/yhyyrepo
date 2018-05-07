@@ -250,6 +250,12 @@ unspay:
   quickPayUrl: http://quickpay.unspay.com/quickpay-front/quickPayWap/prePay
   callbackUrl: https://typ.yuehuayueyou.com/unspay/callbackApi
 
+#四方
+square:
+  merCode: 330100600021
+  squarePayUrl: http://47.98.210.208:8080/cashierweb/service/smk/gateway/makeOrder.do
+  callbackUrl: https://typ.yuehuayueyou.com/square/callbackApi
+
 #消息队列
 mq:
   suffix: _qa
