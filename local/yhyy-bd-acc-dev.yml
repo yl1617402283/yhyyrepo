@@ -3,9 +3,9 @@ spring:
     name: yhyy-bd-acc
   datasource:                           # Mabtis数据源，用于主库操作
     druid: 
-      url: jdbc:mysql://101.132.182.194:9899/dbyscwstx
+      url: jdbc:mysql://101.132.192.95:4000/testdb
       username: root
-      password: ArM%BG@u@mhWv0TA
+      password: ae2366d2
       driver-class-name: com.mysql.jdbc.Driver
       initial-size: 20
       max-active: 100
@@ -63,7 +63,3 @@ server:
     max-http-post-size: 30720
     accept-count: 20000
     min-spare-threads: 100
-
-logging:
-  level:
-    com.aliyun.openservices.shade.com.alibaba.rocketmq.client.consumer.store.RemoteBrokerOffsetStore: error
