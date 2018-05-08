@@ -7,7 +7,7 @@ spring:
       username: root
       password: ae2366d2
       driver-class-name: com.mysql.jdbc.Driver
-      initial-size: 2
+      initial-size: 20
       max-active: 100
       min-idle: 5
       max-wait: 60000
