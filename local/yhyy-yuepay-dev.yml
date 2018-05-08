@@ -205,7 +205,7 @@ kqpay:
     commandType: C001
 #快钱2支付
 kq2pay:
-  cipher: ETZ2ADUF7D9YR3UA
+  cipher: 123321
   merchantAcctId: 1021003794801
   bgUrl: https://typ.yuehuayueyou.com/kuaiqian/callbackApi
   kqUrl: https://www.99bill.com/gateway/recvMerchantInfoAction.htm
