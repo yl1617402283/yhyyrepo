@@ -43,15 +43,6 @@ mybatis:
   config-location: classpath:mybatis-config.xml         #mybatis配置文件
   mapper-locations: classpath*:com/yhyy/mapper/**/*.xml
 
-logging:
-  level:
-    root:  WARN
-    com:
-      yhyy:
-        controller: INFO
-        service: INFO
-        dao: INFO
-
 #service discovery url
 eureka:
   client:
