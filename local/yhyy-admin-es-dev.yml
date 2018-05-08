@@ -11,13 +11,21 @@ elasticsearchhost: 192.168.1.192
 elasticsearchport: 9200
 
 # ES配置
-es:client:transport:sniff: true
-es:cluster:name: yhyy-admin
-es:ignore:cluster:name: false
+es:
+  client:
+    transport:
+      sniff: true
+  cluster:
+    name: yhyy-admin
+  ignore:
+    cluster:
+      name: false
 # es的ip及端口号，多个以逗号分隔
-es:ip: 192.168.1.192:9300
+  ip: 192.168.1.192:9300
 #es.ip=127.0.0.1:9300
-es:routing:time: 5s
-es:nodes:interval: 5s
+  routing:
+    time: 5s
+  nodes:
+    interval: 5s
 
-es:index_name: test-index
+  index_name: test-index
