@@ -5,7 +5,7 @@ spring:
     name: yhyy-yuepay
   datasource:
     druid:
-      url: jdbc:mysql://172.19.172.248:9899/dbyscwstx
+      url: jdbc:mysql://101.132.182.194:9899/dbyscwstx
       driver-class-name: com.mysql.jdbc.Driver
       username: root
       password: ArM%BG@u@mhWv0TA
