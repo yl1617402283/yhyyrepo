@@ -261,7 +261,7 @@ unspay:
 #四方
 square:
   merCode: 330100600021
-  squarePayUrl: http://47.98.211.155:8080/cashierweb/service/smk/gateway/makeOrder.do
+  squarePayUrl: http://118.178.46.246:8080/cashierweb/service/smk/gateway/makeOrder.do
   callbackUrl: https://typ.yuehuayueyou.com/square/callbackApi
 
 #消息队列
