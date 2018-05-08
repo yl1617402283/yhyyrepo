@@ -68,6 +68,11 @@ mq-ONSADDR: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
 mq-PRODUCERID_SEARCH: PID_SOLRINDEX
 mq-TOPIC_SEARCH:  yhyy-search
 mq-SEARCH_CONSUMER_ID: CID_SOLRINDEX
+# 更新用户信息通知钱包
+ac_user_receive_topic: AcUserReceive
+ac_user_receive_consumer_id: CID_AcUserReceive
+ac_user_receive_producer_id: PID_AcUserReceive
+ac_user_receive_tag: AcUserReceiveTag
 accessKey: LTAIp2gpRJI0gvKu
 secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
 odr_refund_topic: refund
