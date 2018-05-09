@@ -6,10 +6,10 @@ spring:
       maxFileSize: 10Mb
   datasource:
     druid:
-      url: jdbc:mysql://172.19.172.248:9899/mall_two
+      url: jdbc:mysql://drdsd267745t4p0r.drds.aliyuncs.com:3306/drds_bj_scph1230
       driver-class-name: com.mysql.jdbc.Driver
-      username: root
-      password: ArM%BG@u@mhWv0TA
+      username: drds_bj_scph1230
+      password: rmuZHgoF3J6XeZvB
       initial-size: 20  #初始化连接数
       max-active: 100  #最大连接池数量
       min-idle: 5  #最小连接池数量
@@ -88,15 +88,15 @@ imConfigure-imKey: a578f34e1d4422ac8d6bf1c800d08970
 imConfigure-imSecret: 5fda1fe18c58
 
 #MQ
-suffix: _qa
+suffix: _pre_on
 pushTopic: yhyy_push
 pushConsumerId: CID_push
 pushTag: PUSHNOTIFICATION
 accessKey: LTAIp2gpRJI0gvKu
 secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
 ONSAddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
-logTopicName: yhyy_user_log_qa
-LogConsumerId: CID_user_log_qa
+logTopicName: yhyy_user_log_pre_on
+LogConsumerId: CID_user_log_pre_on
 
 #是否开启短信发送 1:开启 0:关闭
 isSendSmsCode: 1
@@ -156,7 +156,9 @@ msg_prefix: huaxin_
 PushAppkey: 5b7140c1dd618c50f8988e59
 PushAppmastersecret: 73751abba7120d42df1978fd
 
+
 #百悟科技短信通道
 corp_id: yh6201
 corp_pwd: egeg86
 corp_service: 106900321202
+bw_sms_url: http://client.cloud.hbsmservice.com:8080/sms_send2.do

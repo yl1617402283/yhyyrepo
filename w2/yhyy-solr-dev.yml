@@ -10,10 +10,10 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
   datasource:
     druid:
-      url: jdbc:mysql://172.19.172.248:9899/mall_two
+      url: jdbc:mysql://drdsd267745t4p0r.drds.aliyuncs.com:3306/drds_bj_scph1230
       driver-class-name: com.mysql.jdbc.Driver
-      username: root
-      password: ArM%BG@u@mhWv0TA
+      username: drds_bj_scph1230
+      password: rmuZHgoF3J6XeZvB
       initial-size: 20  #初始化连接数
       max-active: 100  #最大连接池数量
       min-idle: 5  #最小连接池数量
@@ -95,10 +95,10 @@ footTypeName: foot
 historyIndexName: historycollection
 historyTypeName: history
 ONSAddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
-topicName: yhyy-search_qa
+topicName: yhyy-search_pre_on
 accessKey: LTAIp2gpRJI0gvKu
 secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
-consumerId: CID_SOLRINDEX_qa
+consumerId: CID_SOLRINDEX_pre_on
 #1是 可以看不到会员商品 2是查出会员商品
 isShow: 2
 esUrl: http://172.19.172.250:9200

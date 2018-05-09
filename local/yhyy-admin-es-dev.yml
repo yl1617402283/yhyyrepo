@@ -7,5 +7,26 @@ spring:
   http:
     multipart:
       maxFileSize: 10Mb
+
 elasticsearchhost: 106.15.197.39
 elasticsearchport: 9300
+
+
+# ES配置
+es:
+  client:
+    transport:
+      sniff: true
+  cluster:
+    name: yhyy-admin
+  ignore:
+    cluster:
+      name: false
+  #ip: 106.15.197.39:9300,106.14.146.115:9300,47.100.106.136:9300 # es的ip及端口号，多个以逗号分隔
+  routing:
+    time: 5s
+  nodes:
+    interval: 5s
+
+  index_name: test-index
+
