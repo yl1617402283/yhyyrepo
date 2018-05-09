@@ -250,6 +250,7 @@ allscorepay:
   bindUrl: https://typ.yuehuayueyou.com/allscorepay/bindCard
   #绑卡支付页面
   openCardUrl: https://typ.yuehuayueyou.com/allscorepay/openCardPay
+  firstBindUrl: https://paymenta.allscore.com/olgateway/quickDirect/fastSms.htm
 
 # 银生宝
 unspay:
