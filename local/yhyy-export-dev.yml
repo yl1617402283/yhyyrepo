@@ -35,3 +35,4 @@ teststr: cass
 ribbon:
   ReadTimeout: 300000              #请求处理的超时时间
   ConnectTimeout: 10000           #ribbon请求连接的超时时间
+test-test: test
