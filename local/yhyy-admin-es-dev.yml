@@ -7,5 +7,5 @@ spring:
   http:
     multipart:
       maxFileSize: 10Mb
-elasticsearchhost: 192.168.1.192
-elasticsearchport: 9200
+elasticsearchhost: 106.15.197.39
+elasticsearchport: 9300
