@@ -18,7 +18,17 @@ spring:
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
-
+  redis:
+    host: r-uf6afa95ad060204.redis.rds.aliyuncs.com
+    password: S6PRNhepnmNY3Msr
+    port: 6379
+    database: 0
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
 ribbon:
   ConnectTimeout: 30000
@@ -31,8 +41,7 @@ management:
 mybatis:
   check-config-location: true                          #配置校验（true/false）
   config-location: classpath:mybatis-config.xml         #mybatis配置文件
-  mapper-locations: classpath*:com/yhyy/mapper/*.xml
-
+  mapper-locations: classpath*:com/yhyy/mapper/**/*.xml
 
 #service discovery url
 eureka:
