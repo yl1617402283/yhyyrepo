@@ -14,7 +14,7 @@ elasticsearchport: 9200
 es:
   client:
     transport:
-      sniff: true
+      sniff: false
   cluster:
     name: yhyy-admin
   ignore:
