@@ -5,7 +5,7 @@ spring:
     druid: 
       url: jdbc:mysql://101.132.192.95:4000/testdb?useUnicode=true&characterEncoding=utf8&useSSL=true
       username: root
-      password: ae2366d2
+      password:
       driver-class-name: com.mysql.jdbc.Driver
       initial-size: 20
       max-active: 100
