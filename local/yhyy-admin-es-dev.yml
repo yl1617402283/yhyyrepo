@@ -11,7 +11,9 @@ spring:
 elasticsearchhost: 106.15.197.39
 elasticsearchport: 9300
 
-
+eureka:
+  instance:
+    preferIpAddress: true
 # ES配置
 es:
   client:
