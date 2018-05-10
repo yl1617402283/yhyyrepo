@@ -13,7 +13,7 @@ elasticsearchport: 9300
 
 eureka:
   instance:
-    preferIpAddress: true
+    prefer-ip-address: true
 # ES配置
 es:
   client:
