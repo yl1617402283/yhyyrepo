@@ -207,7 +207,7 @@ kqpay:
 kq2pay:
   cipher: 123321
   merchantAcctId: 1021003794801
-  bgUrl: https://typ.yuehuayueyou.com/kuaiqian/callbackApi
+  bgUrl: https://typ.yuehuayueyou.com/kuaiqian2/callbackApi
   kqUrl: https://www.99bill.com/gateway/recvMerchantInfoAction.htm
   kqMobileUrl: https://www.99bill.com/mobilegateway/recvMerchantInfoAction.htm
   fail: https://testwww.yuehuayueyou.com/fail/
@@ -250,6 +250,7 @@ allscorepay:
   bindUrl: https://typ.yuehuayueyou.com/allscorepay/bindCard
   #绑卡支付页面
   openCardUrl: https://typ.yuehuayueyou.com/allscorepay/openCardPay
+  firstBindUrl: https://paymenta.allscore.com/olgateway/quickDirect/fastSms.htm
 
 # 银生宝
 unspay:

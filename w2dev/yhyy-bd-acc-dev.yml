@@ -19,8 +19,9 @@ spring:
       test-on-borrow: false
       test-on-return: false
   redis:
-    cluster:
-      nodes: 192.168.1.139:6479,192.168.1.138:6479,192.168.1.137:6479
+    host: 192.168.1.21
+    password:
+    port: 6379
     database: 0
     pool:
       max-active: 8
@@ -28,7 +29,6 @@ spring:
       max-idle: 8
       min-idle: 0
     timeout: 0
-
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
 ribbon:
   ConnectTimeout: 30000
@@ -50,7 +50,7 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://192.168.1.178:8669/eureka/
+      defaultZone: http://127.0.0.1:8669/eureka/
   instance:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 10
