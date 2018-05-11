@@ -24,7 +24,7 @@ spring:
         enabled: false
   http:
     multipart:
-      maxFileSize: 20Mb
+      maxFileSize: 10Mb
       maxRequestSize: 100Mb
   redis:
     host: 192.168.1.21
