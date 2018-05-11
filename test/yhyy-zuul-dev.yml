@@ -24,7 +24,7 @@ spring:
         enabled: false
   http:
     multipart:
-      maxFileSize: 10Mb
+      maxFileSize: 20Mb
       maxRequestSize: 100Mb
   redis:
     host: r-uf6afa95ad060204.redis.rds.aliyuncs.com

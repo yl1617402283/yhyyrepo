@@ -3,7 +3,7 @@ spring:
     name: yhyy-zuul
   http:
     multipart:
-      maxFileSize: 10Mb
+      maxFileSize: 20Mb
       maxRequestSize: 100Mb
   redis:
     cluster:
