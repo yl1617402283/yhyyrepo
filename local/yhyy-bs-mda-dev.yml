@@ -119,19 +119,19 @@ moduleName: testpicture
 identificationCard: ci
 
 #邮件附件路径
-attachmentPath: /data/enclosure/悦花悦有使用说明.docx
+attachmentPath: /data/enclosure/悦之家·实体服务中心申请材料.zip
 #附件名称
-attachmentName: 悦花悦有使用说明.docx
+attachmentName: 悦之家·实体服务中心申请材料.zip
 #邮件标题
-emailTitle: 悦花悦有
+emailTitle: 悦之家
 #邮件内容
-emailContant: 悦花悦有,从此告别拮据的生活
+emailContant: 悦之家,从此告别拮据的生活
 #发件人邮箱地址
 mailAddress: shichangbu@yuehuayueyou.com
 #发件人邮箱密码
 mailPassword: yuezhijia123!
 #发件人姓名
-sendName: 悦花悦有
+sendName: 悦之家
 
 #极光 true 为开发环境, false 为测试环境
 isDevelop: false
