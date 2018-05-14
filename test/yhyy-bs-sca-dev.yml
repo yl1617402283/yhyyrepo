@@ -37,6 +37,17 @@ spring:
       max-idle: 8
       min-idle: 0
     timeout: 0
+  redis2:
+      host: r-uf61405c450dbc44.redis.rds.aliyuncs.com
+      password: S6PRNhepnmNY3Msr
+      port: 6379
+      database: 0
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+      timeout: 0
   zipkin:
     base-url: http://172.19.173.3:9666
   sleuth:

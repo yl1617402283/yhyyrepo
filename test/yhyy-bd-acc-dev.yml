@@ -3,9 +3,9 @@ spring:
     name: yhyy-bd-acc
   datasource:                           # Mabtis数据源，用于主库操作
     druid: 
-      url: jdbc:mysql://101.132.192.95:4000/testdb?useUnicode=true&characterEncoding=utf8&useSSL=true
+      url: jdbc:mysql://101.132.192.95:4000/dbmlog?useUnicode=true&characterEncoding=utf8&useSSL=true
       username: root
-      password:
+      password: ae2366d2
       driver-class-name: com.mysql.jdbc.Driver
       initial-size: 20
       max-active: 100
@@ -18,17 +18,7 @@ spring:
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
-  redis:
-    host: r-uf6afa95ad060204.redis.rds.aliyuncs.com
-    password: S6PRNhepnmNY3Msr
-    port: 6379
-    database: 0
-    pool:
-      max-active: 8
-      max-wait: -1
-      max-idle: 8
-      min-idle: 0
-    timeout: 0
+
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
 ribbon:
   ConnectTimeout: 30000
