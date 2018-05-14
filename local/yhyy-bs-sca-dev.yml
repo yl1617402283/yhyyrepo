@@ -34,8 +34,9 @@ spring:
         min-idle: 0
       timeout: 0
   redis2:
-      cluster:
-        nodes: 192.168.1.139:6479,192.168.1.138:6479,192.168.1.137:6479
+      host: 192.168.1.21
+      password:
+      port: 6379
       database: 0
       pool:
         max-active: 8
@@ -65,7 +66,7 @@ mybatis:
 
 logging:
   level:
-    root:  WARN
+    root:  INFO
     com:
       yhyy:
         controller: INFO
