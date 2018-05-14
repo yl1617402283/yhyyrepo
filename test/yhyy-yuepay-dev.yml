@@ -209,6 +209,20 @@ kqpay:
     version: bill_drawback_api_1
     url: https://www.99bill.com/webapp/receiveDrawbackAction.do
     commandType: C001
+#快钱2支付
+kq2pay:
+  cipher: 123321
+  merchantAcctId: 1021003794801
+  bgUrl: https://typ.yuehuayueyou.com/kuaiqian2/callbackApi
+  kqUrl: https://www.99bill.com/gateway/recvMerchantInfoAction.htm
+  kqMobileUrl: https://www.99bill.com/mobilegateway/recvMerchantInfoAction.htm
+  fail: https://testwww.yuehuayueyou.com/fail/
+  refund:
+    key: TQYZY469XQF2DIJE
+    merchantId: 10210037948
+    version: bill_drawback_api_1
+    url: https://www.99bill.com/webapp/receiveDrawbackAction.do
+    commandType: C001
 
 pay:
   #前台pc回调地址
@@ -242,13 +256,19 @@ allscorepay:
   bindUrl: https://typ.yuehuayueyou.com/allscorepay/bindCard
   #绑卡支付页面
   openCardUrl: https://typ.yuehuayueyou.com/allscorepay/openCardPay
-
+  firstBindUrl: https://paymenta.allscore.com/olgateway/quickDirect/fastSms.htm
 # 银生宝
 unspay:
   accountId: 2120180424093558001
   key: 31fme6cbapvs
-  quickPayUrl: http://114.80.54.74:8082/quickpay-front/quickPayWap/prePay
+  quickPayUrl: http://quickpay.unspay.com/quickpay-front/quickPayWap/prePay
   callbackUrl: https://typ.yuehuayueyou.com/unspay/callbackApi
+
+#四方
+square:
+  merCode: 330100600021
+  squarePayUrl: http://118.178.46.246:8080/cashierweb/service/smk/gateway/makeOrder.do
+  callbackUrl: https://typ.yuehuayueyou.com/square/callbackApi
 
 #消息队列
 mq:

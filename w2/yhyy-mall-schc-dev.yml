@@ -3,10 +3,10 @@ spring:
     name: yhyy-mall-schc
   datasource:
     druid:
-      url: jdbc:mysql://172.19.172.248:9899/dbyscwstx
+      url: jdbc:mysql://drdsd267745t4p0r.drds.aliyuncs.com:3306/drds_bj_scph1230
       driver-class-name: com.mysql.jdbc.Driver
-      username: root
-      password: ArM%BG@u@mhWv0TA
+      username: drds_bj_scph1230
+      password: rmuZHgoF3J6XeZvB
       initial-size: 20  #初始化连接数
       max-active: 100  #最大连接池数量
       min-idle: 5  #最小连接池数量

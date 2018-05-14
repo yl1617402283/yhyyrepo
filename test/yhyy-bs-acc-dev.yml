@@ -124,3 +124,11 @@ pic:
 #面对面付款黑名单,收款人用户编号，多个时英文逗号分隔
 qr_code:
   blacklist: 1710
+
+#旧money_log表插入操作开关，1表示启用，0表示停用
+old_money_log:
+  switch: 1
+
+#新money_log表插入操作开关，1表示启用，0表示停用
+new_money_log:
+  switch: 1
