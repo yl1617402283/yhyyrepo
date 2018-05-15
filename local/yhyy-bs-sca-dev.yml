@@ -65,7 +65,7 @@ mybatis:
 
 logging:
   level:
-    root:  INFO
+    root:  WARN
     com:
       yhyy:
         controller: INFO
