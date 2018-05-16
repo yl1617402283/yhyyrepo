@@ -124,3 +124,6 @@ userApproveIsStatus: 0
 ##极光push 阿里测试
 PushAppkey: 5b7140c1dd618c50f8988e59
 PushAppmastersecret: 73751abba7120d42df1978fd
+
+##EStrue为从ES读取，false为从mysql读取
+is_query_from_es: true
