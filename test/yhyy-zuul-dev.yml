@@ -64,6 +64,8 @@ zuul:
   host:
     connect-timeout-millis: 10000
     socket-timeout-millis: 10000
+  semaphore:
+    maxSemaphores: 1200 #最大信号量
 ribbon:
   ReadTimeout: 60000              #请求处理的超时时间
   ConnectTimeout: 10000           #ribbon请求连接的超时时间
