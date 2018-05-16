@@ -32,7 +32,7 @@ spring:
     port: 6379
     database: 0
     pool:
-      max-active: 8
+      max-active: 1000
       max-wait: -1
       max-idle: 8
       min-idle: 0
@@ -43,7 +43,7 @@ spring:
       port: 6379
       database: 0
       pool:
-        max-active: 8
+        max-active: 1000
         max-wait: -1
         max-idle: 8
         min-idle: 0

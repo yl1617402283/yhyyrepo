@@ -33,7 +33,7 @@ spring:
     database: 0
     timeout: 666
     pool:
-      max-active: 666
+      max-active: 2000
       max-wait: 1000
       min-idle: 36
       max-idle: 66
@@ -64,10 +64,10 @@ zuul:
   host:
     connect-timeout-millis: 10000
     socket-timeout-millis: 10000
-    maxTotalConnections: 1200
-    maxPerRouteConnections: 1200
+    maxTotalConnections: 2000
+    maxPerRouteConnections: 2000
   semaphore:
-    maxSemaphores: 1200 #最大信号量
+    maxSemaphores: 2000 #最大信号量
 ribbon:
   ReadTimeout: 60000              #请求处理的超时时间
   ConnectTimeout: 10000           #ribbon请求连接的超时时间
