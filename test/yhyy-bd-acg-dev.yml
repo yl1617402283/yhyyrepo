@@ -1,6 +1,6 @@
 spring:
   application: 
-    name: yhyy-bd-acc
+    name: yhyy-bd-acg
   datasource:                           # Mabtis数据源，用于主库操作
     druid: 
       url: jdbc:mysql://101.132.192.95:4000/testdb?useUnicode=true&characterEncoding=utf8&useSSL=true
@@ -45,7 +45,7 @@ eureka:
     lease-expiration-duration-in-seconds: 10
     prefer-ip-address: true
 server:
-  port: 9001
+  port: 9002
   tomcat:
     max-threads: 60000
     max-connections: 60000

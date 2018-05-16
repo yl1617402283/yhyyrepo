@@ -1,6 +1,6 @@
 spring:
   application: 
-    name: yhyy-bd-acc
+    name: yhyy-bd-acg
   datasource:                           # Mabtis数据源，用于主库操作
     druid: 
       url: jdbc:mysql://101.132.192.95:4000/testdb?useUnicode=true&characterEncoding=utf8&useSSL=true
@@ -31,7 +31,8 @@ management:
 mybatis:
   check-config-location: true                          #配置校验（true/false）
   config-location: classpath:mybatis-config.xml         #mybatis配置文件
-  mapper-locations: classpath*:com/yhyy/mapper/**/*.xml
+  mapper-locations: classpath*:com/yhyy/mapper/*.xml
+
 
 #service discovery url
 eureka:
@@ -39,13 +40,13 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://172.19.173.3:8669/eureka/
+      defaultZone: http://192.168.1.178:8669/eureka/
   instance:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 10
     prefer-ip-address: true
 server:
-  port: 9001
+  port: 9002
   tomcat:
     max-threads: 60000
     max-connections: 60000
