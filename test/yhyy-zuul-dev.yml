@@ -64,6 +64,8 @@ zuul:
   host:
     connect-timeout-millis: 10000
     socket-timeout-millis: 10000
+    maxTotalConnections: 1200
+    maxPerRouteConnections: 1200
   semaphore:
     maxSemaphores: 1200 #最大信号量
 ribbon:
