@@ -248,6 +248,8 @@ square:
   merCode: 330100600021
   squarePayUrl: http://118.178.46.246:8080/cashierweb/service/smk/gateway/makeOrder.do
   callbackUrl: https://typ.yuehuayueyou.com/square/callbackApi
+  quickPayUrl: http://118.178.46.246:28000/apigate/service/hzsmk/quickpay
+  quickCallBackUrl: https://testwww.yuehuayueyou.com/squareQuick/callbackApi
 
 #消息队列
 mq:
