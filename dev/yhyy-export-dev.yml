@@ -9,7 +9,7 @@ spring:
       maxFileSize: 10Mb
   datasource:
     druid:
-      url: jdbc:mysql://rm-uf631netfs0mtd36k.mysql.rds.aliyuncs.com:3306/drds_bj_scph1230
+      url: jdbc:mysql://rm-uf631netfs0mtd36k.mysql.rds.aliyuncs.com:3306/drds_bj_scph1230_cmiq_0000
       driver-class-name: com.mysql.jdbc.Driver
       username: drds_bj_scph1230
       password: dWkSfAIW53CJRLUy
