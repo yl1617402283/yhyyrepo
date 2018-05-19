@@ -1,0 +1,192 @@
+spring:
+  application: 
+    name: yhyy-pay-llsann
+  zipkin:
+    base-url: http://172.19.173.93:9666
+    sleuth:
+    sampler:
+      percentage: 1
+
+logging:
+  level:
+    root:  INFO
+    com:
+      yhyy:
+        controller: INFO
+        service: INFO
+      utils:
+        common: INFO
+
+#service discovery url
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://172.19.173.93:8669/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+    prefer-ip-address: true
+
+management:
+  security:
+    enabled: false
+
+server:
+  port: 80
+
+pay:
+  kq:
+    p4a:
+      key: DCTF7T7QLRNC66SC
+      merchantId: 10209982034
+      merchantIp: 47.100.2.222
+    refund:
+      key: QE3DJ6B99IU8Z769
+      merchantId: 10209932413
+      version: bill_drawback_api_1
+      url: https://www.99bill.com/webapp/receiveDrawbackAction.do
+      commandType: C001
+    cb:
+      android:
+        succ: http://47.100.2.222:8080/v1/kq/cb/mobilePayRet?status=succ
+        fail: http://47.100.2.222:8080/v1/kq/cb/mobilePayRet?status=fail
+      ios:
+        succ: http://47.100.2.222:8080/v1/kq/cb/iosPayRet?status=succ
+        fail: http://47.100.2.222:8080/v1/kq/cb/iosPayRet?status=fail
+      h5:
+        succ: https://testtm.yuehuayueyou.com/
+        fail: https://testtm.yuehuayueyou.com/
+      pc:
+        succ: https://testwww.yuehuayueyou.com/
+        fail: https://testwww.yuehuayueyou.com/
+    check:
+      cipher: 123123
+  yb:
+    pc:
+       key: M384ER7N9H8KT78R
+       merchantId: 1020993241301
+       merchantIp: 47.100.2.222
+    wap:
+       key: M384ER7N9H8KT78R
+       merchantId: 1020993241301
+       merchantIp: 47.100.2.222
+  tfb:
+    #代付配置
+    p4a:
+      spid: 1800046681
+      curType: 1
+      #签名的方法。目前支持: MD5，RSA
+      encodeType: MD5
+      md5Salt: 12345
+      #服务器数据编码类型
+      serverEncodeType: UTF-8
+      #天付宝公钥
+      tfbPublicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjDrkoVbyv4jTxeKtKEiK2mZiezQvfJV3sGhiwOnB+By5sa5Sa6Ls4dt5AGVqKHxyQVKRpu/utwtEt2MijWx45P1y2xGe7oDz2hUXP0j8sSa1NP26TmWHwO7czgJxxrdJ6RNqskSfjwsa5YMsqmcrumxUIxeCg5EOkgU26bnPoZQIDAQAB
+      #商户的私钥,需要PKCS8格式
+      privateKey: MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBAL80WRy2i3JLrTHp8f0gYVGd+lu9k6ZSixMCEoRVsNbpt3NIdXI/aWW/G/GfW0c4TbacyhTV7Yn+I+eMrXjIFoi1CoYi0eIIQrZC5cU+KBA+reYDbAX30o8K4d90QTlPTzueW6TP/c2f/E7Ub0rHXj7d6Als1jO1oE0uiErQKTO9AgMBAAECgYEAkKuYHVyVaBaQZirf2SmN2QZSLuXi+L6N0gUIY66+je3qy0Rw8M+//Kc8CncLxnh4fIpncJppD7cGDaXof3HNcbMjIpBvwDJhpqLVH7JNx16HeQ73uWcqCHMLecNFQR8XAEiQJ0JbGYuGOxUqFYG87YEKXFIBGL50+ZlBHARRGoECQQD7JPdZhMp6dBfTp93/6Oa+OvBl6wMDAvUUIT1RAF4UVeQ+1vg0BBtJE0TPGnacO3DcCobA+KKpDBz88BxRmvIhAkEAwua15+io6vUciObBUPAuNrJEEdW9KxK/rocI5B/cIc4zSIgrl5nLvy5uqMuXiL94E0Oa4dwDkbbtaeufwA8GHQJBAKOehMu8mNHImtFZN2gHi3T6Hy63OsIWhib0NOd17tUe1FIgaZox5rjoJdcr7YSBsViaPwqvsgGik6wynrCH2yECQDAKYigppwlTJZdxGZFzwlBlHHYw8xHc6zZ/vmdMmxwSEX39YpFZrWkQbuJYXJ+uYlCNR24IpzCRoG+NTrEugtkCQQCCanl2vQTbK7gW4BXVuwcc6CxvPCEo7BHESTVCgV0hwSIwusE6UfQKVRGM/yjok8U2Y0F2C5yhJD/WdHvYkWKv
+      #单笔代付接口名
+      singlePay4AnotherApi: http://apitest.tfb8.com/cgi-bin/v2.0/api_pay_single.cgi
+    #快捷支付配置
+    qp:
+      spid: 1800932280
+      curType: 1
+      notifyUrl: http://47.100.2.222:8080/v1/tfb/cb/tfbPayCallback
+      pageUrl: http://47.100.2.222:8080/v1/tfb/cb/tfbPayCallback
+      #签名的方法。目前支持: MD5，RSA
+      encodeType: MD5
+      md5Salt: z+Eb65DHV2
+      #服务器数据编码类型
+      serverEncodeType: GBK
+      #天付宝公钥
+      tfbPublicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjDrkoVbyv4jTxeKtKEiK2mZiezQvfJV3sGhiwOnB+By5sa5Sa6Ls4dt5AGVqKHxyQVKRpu/utwtEt2MijWx45P1y2xGe7oDz2hUXP0j8sSa1NP26TmWHwO7czgJxxrdJ6RNqskSfjwsa5YMsqmcrumxUIxeCg5EOkgU26bnPoZQIDAQAB
+      #商户的私钥,需要PKCS8格式
+      privateKey: MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAKxG8uzmlZArLlwm+UvkJaB678odcLPJURhI0GfnTs6QJTwCWOHCsplvmDfS4TBGU+YbuBlPtZxHVmsO5eKiTsQJdDl37sE0dkIa8vj0P/Rm4wIa45w6EdZAHlzqmW6PpNpqvtg2RUCk0wmD15wyWkkMPkF1ryBX7yxxBUz8kvR7AgMBAAECgYAV56uJvcP0odjyNK5sHOU/44HL1DR5V7as/M0q+PlHQILLf4znn8bvxYW4S2MArWCLmKiu5zizV0rAsBNA3txe0U2zSYvvdMPqWxAxnVsJXC/wxOMyz8zxRTypGb5TLm97Bxty/rvu/RRFQRdckURobcumq6+mMd/xlqJq7owK2QJBAN2BnckWT7tHjT5mlswnFKUPojyldlQ9J+wvqaORdS/ggXUcTHEm2A2eGR8lmRGO0lkNC5V/8aSqvJ+oiXvPTCUCQQDHGs3X2fqu/p/BtjxSaTgDKRaKtnYsIOXtgo0b+kZWj52aeGyNNVXJ80cL+/f82gjtQL228lPLoACmkUeTGwwfAkBgXCil99zLnf7l7H8hZMboX3q2Y0ysrMYXS0zC6V5Pa50lsx/WAY3vrp1DHXoPV1BOiQxHBxe6CMRxuEHG6JE5AkEAvkwiHYJblNIMgyrYMLQcMvkccGvAOqEe4Yj7sZfdjnIpYjBjH/uwCRsZ9pxXAzapfYl5SdgGuwIsXQdR74nUZQJBAK3Q9M2qjT8KpGv9Mp5//sq7Djbb/6rsagc5GB1c/U0StxXmMeW4jbnmOWy6PlkLE6y+2wbC4EeENzjtjhY3xOk=
+      #银行卡快捷签约支付申请调用的接口名
+      qsignPayApplyApi: http://api.tfb8.com/cgi-bin/v2.0/api_qsignpay_apply.cgi
+      #银行卡快捷签约支付确认调用的接口名
+      qsignPayComfirmApi: http://api.tfb8.com/cgi-bin/v2.0/api_qsignpay_confirm.cgi
+      #银行卡快捷支付申请调用的接口名
+      qPayApplyApi: http://api.tfb8.com/cgi-bin/v2.0/api_qpay_apply.cgi
+      #银行卡快捷支付确认调用的接口名
+      qPayConfirmApi: http://api.tfb8.com/cgi-bin/v2.0/api_qpay_confirm.cgi
+      #银行卡快捷解约调用的接口名
+      qsignCancelApi: http://api.tfb8.com/cgi-bin/v2.0/api_qsign_cancel.cgi
+      #支付结果单笔查询调用的接口名
+      orderQueryApi: http://api.tfb8.com/cgi-bin/v2.0/api_single_qry_order.cgi
+      #快捷签约协议单笔查询调用的接口名
+      qsignQueryApi: http://api.tfb8.com/cgi-bin/v2.0/api_single_qry_qsign.cgi
+      #银行卡信息单笔查询调用的接口名
+      cardbinQueryApi: http://api.tfb8.com/cgi-bin/v2.0/api_single_qry_cardbin.cgi
+      #银行限额单笔查询调用的接口名
+      quotaQueryApi: http://api.tfb8.com/cgi-bin/v2.0/api_single_qry_quota.cgi
+      #快捷验证码短信重发调用的接口名
+      smsResendApi: http://api.tfb8.com/cgi-bin/v2.0/api_sms_resend.cgi
+    #普通支付配置
+    cp:
+      spid: 1800932280
+      curType: 1
+      notifyUrl: http://47.100.2.222:8080/v1/tfb/cb/tfbPayCallback
+      #签名的方法。目前支持: MD5，RSA
+      encodeType: MD5
+      md5Salt: z+Eb65DHV2
+      #服务器数据编码类型
+      serverEncodeType: GBK
+      #天付宝公钥
+      tfbPublicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjDrkoVbyv4jTxeKtKEiK2mZiezQvfJV3sGhiwOnB+By5sa5Sa6Ls4dt5AGVqKHxyQVKRpu/utwtEt2MijWx45P1y2xGe7oDz2hUXP0j8sSa1NP26TmWHwO7czgJxxrdJ6RNqskSfjwsa5YMsqmcrumxUIxeCg5EOkgU26bnPoZQIDAQAB
+      #商户的私钥,需要PKCS8格式
+      privateKey: MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAKxG8uzmlZArLlwm+UvkJaB678odcLPJURhI0GfnTs6QJTwCWOHCsplvmDfS4TBGU+YbuBlPtZxHVmsO5eKiTsQJdDl37sE0dkIa8vj0P/Rm4wIa45w6EdZAHlzqmW6PpNpqvtg2RUCk0wmD15wyWkkMPkF1ryBX7yxxBUz8kvR7AgMBAAECgYAV56uJvcP0odjyNK5sHOU/44HL1DR5V7as/M0q+PlHQILLf4znn8bvxYW4S2MArWCLmKiu5zizV0rAsBNA3txe0U2zSYvvdMPqWxAxnVsJXC/wxOMyz8zxRTypGb5TLm97Bxty/rvu/RRFQRdckURobcumq6+mMd/xlqJq7owK2QJBAN2BnckWT7tHjT5mlswnFKUPojyldlQ9J+wvqaORdS/ggXUcTHEm2A2eGR8lmRGO0lkNC5V/8aSqvJ+oiXvPTCUCQQDHGs3X2fqu/p/BtjxSaTgDKRaKtnYsIOXtgo0b+kZWj52aeGyNNVXJ80cL+/f82gjtQL228lPLoACmkUeTGwwfAkBgXCil99zLnf7l7H8hZMboX3q2Y0ysrMYXS0zC6V5Pa50lsx/WAY3vrp1DHXoPV1BOiQxHBxe6CMRxuEHG6JE5AkEAvkwiHYJblNIMgyrYMLQcMvkccGvAOqEe4Yj7sZfdjnIpYjBjH/uwCRsZ9pxXAzapfYl5SdgGuwIsXQdR74nUZQJBAK3Q9M2qjT8KpGv9Mp5//sq7Djbb/6rsagc5GB1c/U0StxXmMeW4jbnmOWy6PlkLE6y+2wbC4EeENzjtjhY3xOk=
+      #银行卡支付申请调用的接口名
+      cardPayApplyApi: http://api.tfb8.com/cgi-bin/v2.0/api_cardpay_apply.cgi
+      #支付结果单笔查询调用的接口名
+      singleQryOrderApi: http://api.tfb8.com/cgi-bin/v2.0/api_single_qry_order.cgi
+      #退款申请调用的接口名
+      cardPayRefundReqApi: http://api.tfb8.com/cgi-bin/v2.0/api_cardpay_refundreq.cgi
+      #退款单笔结果查询调用的接口名
+      singleQryRefundOrderApi: http://api.tfb8.com/cgi-bin/v2.0/api_single_qry_refundorder.cgi
+    cb:
+      wap:
+        succ: https://testtm.yuehuayueyou.com/
+        fail: https://testtm.yuehuayueyou.com/
+      pc:
+        succ: https://testwww.yuehuayueyou.com/
+        fail: https://testwww.yuehuayueyou.com/
+  lianlian:
+    instant:
+      notify_url: http://47.100.2.222:8080/lianlian/tradepayapi/receiveNotify
+      pay_url: https://instantpay.lianlianpay.com/paymentapi/payment.htm
+      query_url: https://instantpay.lianlianpay.com/paymentapi/queryPayment.htm
+  lian:
+    YT_PUB_KEY:  MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCSS/DiwdCf/aZsxxcacDnooGph3d2JOj5GXWi+q3gznZauZjkNP8SKl3J2liP0O6rU/Y/29+IUe+GTMhMOFJuZm1htAtKiu5ekW0GlBMWxf4FPkYlQkPE0FtaoMP3gYfh+OwI+fIRrpW3ySn3mScnc6Z700nU/VYrRkfcSCbSnRwIDAQAB
+    TRADER_PRI_KEY:  MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAMWOIGVAhcSRm9oYcTCgOflJEt4FvSARSnY2EjviJ5pfzOdC6Kk00bZc2/3eNmUYHieJAWvsJFQI/Edgx2R+5LcdI90+Ez5WY0g3vALjFSv/3AyTxMY1nbOsoR4+8zAV9wQE+PoxvIz9Mxl+RGY9jweoTRzsv2z76miVqoZrTle3AgMBAAECgYEAv9rdPzfAMTwvnUirdEvGwX/j4Na16xSfudmdL6bcSyHKfrUN+nWfTHk19H//V4Jqln6JcOPuC+aGClPEkKZjOnTFxdtD5aMw2Hq92wvsyF5aOfSom9HIt2qhBdlQoB0okyKshat1JucThnb4UwJrw+Q9PzHS/xY8WWRvuIcPjcECQQDrOfsJAccyZHYp322MY0F1lGOoRqU5U1W0kmWbdsEbpPwjKAM3heO7W/sB2/L3RKSq2u1EdmyuhZa6LkCECZAxAkEA1wB4VFqw2PJDry9D+j2C2Z7SGqnRC7e6J0sDSDo2qL8YzX08e19lpGyD6LMo3CgLIMXb91Zwm0hslxABoGmUZwJBAND4q4ou6DZehZNhiMMFkqvQblCaokIxRJysylO4xom2osDg1SrIaa6TYoUeT9VYSCn5YHxH8PmCeItid7JVhKECQHhM3QdmD1n0hIa7Ta/xRwv5X9pndn61+MUPpfB+EiNtebVRA8yMXlUYGt7TkGNPTJqz2xaUGUHpzkjgPejB6rUCQC7Io8PqCwFYW+1gpPhkPOHYV8PE3DQqRXOdUeOnSvXhN+8/yNHPlb2okHuYVpH4OjyCT1SpevHgWk8YHSLhSv4=
+    MD5_KEY: 201408071000001545test_20140812
+    NOTIFY_URL: http://testpayapi.yuehuayueyou.com/v1/pay/lian/ReceiveNotify
+    URL_RETURN: http://testpayapi.yuehuayueyou.com/v1/pay/lian/tongbuCallback
+    OID_PARTNER: 201711070001109005
+    SIGN_TYPE: RSA
+    VERSION: 1.0
+    BUSI_PARTNER:  109001
+    PAY_URL: https://cashier.lianlianpay.com/payment/bankgateway.htm
+    QUERY_USER_BANKCARD_URL: https://queryapi.lianlianpay.com/bankcardbindlist.htm
+    QUERY_BANKCARD_URL: https://queryapi.lianlianpay.com/bankcardbin.htm
+    WAP_PAY_URL: https://wap.lianlianpay.com/payment.htm
+    WAP_NOTIFY_URL: http://testpayapi.yuehuayueyou.com/v1/pay/lianwap/wapyibuNotify
+    WAP_URL_RETURN: http://testpayapi.yuehuayueyou.com/v1/pay/lianwap/waptongbuCallback
+    YT_PUB_KEY_SECOND: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCSS/DiwdCf/aZsxxcacDnooGph3d2JOj5GXWi+q3gznZauZjkNP8SKl3J2liP0O6rU/Y/29+IUe+GTMhMOFJuZm1htAtKiu5ekW0GlBMWxf4FPkYlQkPE0FtaoMP3gYfh+OwI+fIRrpW3ySn3mScnc6Z700nU/VYrRkfcSCbSnRwIDAQAB
+
+
+
+#---
+#spring:
+#  profiles: peer1                                 # 指定profile=peer1
+#server:
+#  port: 8071
+#---
+#spring:
+#  profiles: peer2                                 # 指定profile=peer2
+#server:
+#  port: 8072
+#---
+#spring:
+#  profiles: peer3                                 # 指定profile=peer3
+#server:
+#  port: 8073
