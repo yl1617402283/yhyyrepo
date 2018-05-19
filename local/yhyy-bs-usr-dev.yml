@@ -3,7 +3,7 @@ spring:
     name: yhyy-bs-usr
   http:
     multipart:
-      maxFileSize: 20Mb
+      maxFileSize: 10Mb
   datasource:                           # Mabtis数据源，用于主库操作
     # 使用druid数据源
       url: jdbc:mysql://101.132.182.194:9899/dbyscwstx
