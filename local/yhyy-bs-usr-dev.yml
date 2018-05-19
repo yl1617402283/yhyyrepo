@@ -79,6 +79,11 @@ eureka:
     prefer-ip-address: true
 server:
   port: 8887
+  maxHttpHeaderSize: 1
+  maxHttpPostSize: 1
+  tomcat:
+    maxHttpHeaderSize: 1
+    maxHttpPostSize: 1
 mq:
   suffix: _178
 identity:
