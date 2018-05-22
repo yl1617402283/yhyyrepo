@@ -177,9 +177,9 @@ gain_encrypt_field: true
 #插入手机号和证件号码只插入加密后的 false（新老字段都插入） true（只插入新字段，不插入旧字段）加密数据性能稳定删除数据库字段后打开）
 save_encrypt_field: false
 #身份证图片识别  api_key
-img_api_key: PYBoOmi7l_c383RHaSlc0dPtEl1TWUZ-
+img_api_key: XwzVPpSYCVR4Z410FFm6qccrBqdauI6l
 #身份证图片识别  api_secret
-img_api_secret: PRwJkrlXJpQttRUhzJQRKRi8xOw9bT6A
+img_api_secret: D3xfRj66QQfI2NJsPxufIt3accAmzfiV
 
 #
 feignclient_user: http://192.168.10.70:8632/v1/user/storeLogin
