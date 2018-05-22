@@ -86,7 +86,7 @@ mybatis:
   config-location: classpath:mybatis-config.xml         #mybatis配置文件
   mapper-locations: classpath*:mapper/readXml/*.xml
 elasticsearch.cluster.name: yhyy
-elasticsearch.server.arr: 172.19.172.250:9300,172.19.173.0:9300,172.19.173.4:9300
+elasticsearch.server.arr: 172.19.173.93:9300,172.19.173.93:9301,172.19.173.93:9302
 indexName: collection
 MerchantTypeName: Merchant
 ProductTypeName: Product
@@ -101,6 +101,6 @@ secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
 consumerId: CID_SOLRINDEX_feature
 #1是 可以看不到会员商品 2是查出会员商品
 isShow: 2
-esUrl: http://172.19.172.250:9200
+esUrl: http://172.19.173.93:9200
 #1是 屏蔽悦超市 2是放开悦超市
 isShowMda: 1
