@@ -6,12 +6,16 @@ spring:
     name: yhyy-settle-acc
   datasource:
     druid:
-      url: jdbc:mysql://rm-uf6yn1yga21gc3fq81o.mysql.rds.aliyuncs.com:3306/drds_bj_scph1230_cmiq_0000
+      url: jdbc:mysql://rm-uf631netfs0mtd36k.mysql.rds.aliyuncs.com:3306/drds_bj_scph1230_cmiq_0000
       driver-class-name: com.mysql.jdbc.Driver
-      #username: root
-      #password: ArM%BG@u@mhWv0TA
       username: drds_bj_scph1230
       password: dWkSfAIW53CJRLUy
+      #url: jdbc:mysql://rm-uf6yn1yga21gc3fq81o.mysql.rds.aliyuncs.com:3306/drds_bj_scph1230_cmiq_0000
+      #driver-class-name: com.mysql.jdbc.Driver
+      #username: root
+      #password: ArM%BG@u@mhWv0TA
+      #username: drds_bj_scph1230
+      #password: dWkSfAIW53CJRLUy
       initial-size: 20  #初始化连接数
       max-active: 100  #最大连接池数量
       min-idle: 5  #最小连接池数量
