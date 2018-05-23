@@ -46,6 +46,9 @@ eureka:
     lease-expiration-duration-in-seconds: 10
     prefer-ip-address: true
 
+# 测试环境payurl统一配置
+payUrl: https://typ.yuehuayueyou.com
+
 #易宝一键支付
 yeepay:
   #商户编号(测试账号)
@@ -65,7 +68,7 @@ yeepay:
   #订单查询接口
   OrderSearchPayApi: https://ok.yeepay.com/merchant/query_server/pay_single
   #后台回调地址
-  callbackurl: http://101.132.158.152:8888/yeepay/callbackApi
+  callbackurl: ${payUrl}/yeepay/callbackApi
   #前台pc回调地址
   pccallbackurl: https://testwww.yuehuayueyou.com
   #前台h5回调地址
@@ -95,7 +98,7 @@ yeepay2:
   #订单退款接口请求地址
   RefundPayApi: https://o2o.yeepay.com/zgt-api/api/refund
   #后台回调地址
-  callbackurl: http://101.132.158.152:8888/yeepay2/callbackApi
+  callbackurl: ${payUrl}/yeepay2/callbackApi
   #前台pc回调地址
   pccallbackurl: https://testwww.yuehuayueyou.com
   #前台h5回调地址
@@ -128,7 +131,7 @@ ops:
   #退款请求地址
   refundApiUrl: https://pg.openepay.com/gateway/index.do
   #支付回调地址
-  ReceiveUrl: http://101.132.158.152:8888/kltpay/callbackApi
+  ReceiveUrl: ${payUrl}/kltpay/callbackApi
   #支付请求地址
   payApiUrl: https://pg.openepay.com/gateway/index.do
   #app支付请求地址
@@ -146,7 +149,7 @@ chinagpay:
   #支付地址
   payApiUrl: http://gpay.chinagpay.com/bas/FrontTrans
   #回调地址
-  backUrl: https://typ.yuehuayueyou.com/chinagpay/callbackApi
+  backUrl: ${payUrl}/chinagpay/callbackApi
   #退款地址
   refundApiUrl: http://gpay.chinagpay.com/bas/BgTrans
   #前台pc回调地址
@@ -187,13 +190,13 @@ yeepayyop:
   #用户前缀，1：生产，2：测试  生产的不加前缀
   prefixUser: 2
   #后台回调地址
-  callbackurl: http://101.132.158.152:8888/yeepay3/callbackApi
+  callbackurl: ${payUrl}/yeepay3/callbackApi
 
 #快钱支付
 kqpay:
   cipher: 123123
   merchantAcctId: 1020993241301
-  bgUrl: https://typ.yuehuayueyou.com/kuaiqian/callbackApi
+  bgUrl: ${payUrl}/kuaiqian/callbackApi
   kqUrl: https://www.99bill.com/gateway/recvMerchantInfoAction.htm
   kqMobileUrl: https://www.99bill.com/mobilegateway/recvMerchantInfoAction.htm
   fail: https://testwww.yuehuayueyou.com/fail/
@@ -207,7 +210,7 @@ kqpay:
 kq2pay:
   cipher: 123321
   merchantAcctId: 1021003794801
-  bgUrl: https://typ.yuehuayueyou.com/kuaiqian2/callbackApi
+  bgUrl: ${payUrl}/kuaiqian2/callbackApi
   kqUrl: https://www.99bill.com/gateway/recvMerchantInfoAction.htm
   kqMobileUrl: https://www.99bill.com/mobilegateway/recvMerchantInfoAction.htm
   fail: https://testwww.yuehuayueyou.com/fail/
@@ -235,7 +238,7 @@ allscorepay:
   #商户编号
   merchantId: "001018041304657"
   #通知URL
-  notifyUrl: https://typ.yuehuayueyou.com/allscorepay/callbackApi
+  notifyUrl: ${payUrl}/allscorepay/callbackApi
   #公匙
   AllscorePublicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCK7Uy5ZWqS6cDVzkzZWatBo+M0fYJtSpgONiYL5iX8eXTA8o5qHgkaLMnYHBSsxA6AaMRxpgtHVUCSVHVFTKVZ179/zRODxTitrm/BPRFzTaiUa6cYWkAn1jy0zaHlRQDkPfdfUH8bGqenMYaGluRMu+F5f1qrJCQncAfBjdy7GQIDAQAB
   #私匙
@@ -249,15 +252,15 @@ unspay:
   accountId: 2120180424093558001
   key: 31fme6cbapvs
   quickPayUrl: http://quickpay.unspay.com/quickpay-front/quickPayWap/prePay
-  callbackUrl: https://typ.yuehuayueyou.com/unspay/callbackApi
+  callbackUrl: ${payUrl}/unspay/callbackApi
 
 #四方
 square:
   merCode: 330100600021
   squarePayUrl: http://118.178.46.246:8080/cashierweb/service/smk/gateway/makeOrder.do
-  callbackUrl: https://typ.yuehuayueyou.com/square/callbackApi
+  callbackUrl: ${payUrl}/square/callbackApi
   quickPayUrl: http://118.178.46.246:28000/apigate/service/hzsmk/quickpay
-  quickCallBackUrl: https://typ.yuehuayueyou.com/squareQuick/callbackApi
+  quickCallBackUrl: ${payUrl}/squareQuick/callbackApi
 
 #消息队列
 mq:

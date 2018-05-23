@@ -84,10 +84,10 @@ odr_refund_producer_id: PID_refund
 odr_refund_tag: refund_tag
 
 # 商品详情链接地址
-productUrl: https://testwww.yuehuayueyou.com/web/shopMall/products/productDetail.html?proId=
+productUrl: https://devwww.yuehuayueyou.com/web/shopMall/products/productDetail.html?proId=
 
 notification:
-  link: https://testtm.yuehuayueyou.com/xiangqing
+  link: https://devm.yuehuayueyou.com/xiangqing
 
 #会员实名认证,身份证验证是否开启
 memberIdentity: 1
