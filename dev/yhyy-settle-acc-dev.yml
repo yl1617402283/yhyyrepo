@@ -15,7 +15,7 @@ spring:
       #username: root
       #password: ArM%BG@u@mhWv0TA
       #username: drds_bj_scph1230
-      #password: dWkSfAIW53CJRLUy
+      # password: dWkSfAIW53CJRLUy
       initial-size: 20  #初始化连接数
       max-active: 100  #最大连接池数量
       min-idle: 5  #最小连接池数量
