@@ -127,3 +127,7 @@ PushAppmastersecret: 73751abba7120d42df1978fd
 
 ##EStrue为从ES读取，false为从mysql读取
 is_query_from_es: true
+
+person:
+  name: dq
+  age: 18
