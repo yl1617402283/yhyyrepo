@@ -130,3 +130,7 @@ is_query_from_es: true
 
 ##member从ES读取开关 1 开启 0 关闭
 member_query_es: 1
+
+person:
+  name: dq
+  age: 18

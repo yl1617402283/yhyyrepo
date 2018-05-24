@@ -164,4 +164,9 @@ PushAppmastersecret: 73751abba7120d42df1978fd
 corp_id: yh6201
 corp_pwd: egeg86
 corp_service: 106900321202
+
+vncorp_id: wn8456
+vncorp_pwd: 5698sd
+vncorp_service: 1069003211601
+vnbw_sms_url: http://sms.hbsmservice.com:8080/sms_send2.do
 bw_sms_url: http://client.cloud.hbsmservice.com:8080/sms_send2.do
