@@ -257,6 +257,11 @@ unspay:
   key: 31fme6cbapvs
   quickPayUrl: http://quickpay.unspay.com/quickpay-front/quickPayWap/prePay
   callbackUrl: ${payUrl}/unspay/callbackApi
+  firstSendUrl: http://114.80.54.75/authPay-front/authPay/pay
+  secondSendUrl: http://114.80.54.75/authPay-front/authPay/pay
+  resendSmsUrl: http://114.80.54.75/authPay-front/authPay/sendVercode
+  paydUrl: http://114.80.54.75/authPay-front/authPay/confirm
+  callBack: ${payUrl}/unsVerPay/callbackApi
 
 #四方
 square:
