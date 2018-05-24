@@ -1,0 +1,42 @@
+spring:
+  application: 
+    name: yhyy-instant-pay
+  zipkin:
+    base-url: 172.19.173.93:9666
+    sleuth:
+    sampler:
+      percentage: 1
+
+logging:
+  level:
+    root:  INFO
+    com:
+      yhyy:
+        controller: INFO
+        service: INFO
+      utils:
+        common: INFO
+
+#service discovery url
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://172.19.173.93:8669/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+    prefer-ip-address: true
+    
+management:
+  security:
+    enabled: false
+
+server:
+  port: 8073
+
+pay:
+  lianlian:
+    instant:
+      notify_url: http://101.132.185.3:8080/lianlian/tradepayapi/receiveNotify
+      pay_url: https://instantpay.lianlianpay.com/paymentapi/payment.htm
+      query_url: https://instantpay.lianlianpay.com/paymentapi/queryPayment.htm
