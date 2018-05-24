@@ -3,13 +3,17 @@ spring:
     name: yhyy-bs-usr
   http:
     multipart:
-      maxFileSize: 10Mb
+      maxFileSize: 20Mb
   datasource:                           # Mabtis数据源，用于主库操作
-    # 使用druid数据源
-      url: jdbc:mysql://101.132.182.194:9899/dbyscwstx
+    druid:
+      url: jdbc:mysql://rm-uf631netfs0mtd36k.mysql.rds.aliyuncs.com:3306/drds_bj_scph1230_cmiq_0000
       driver-class-name: com.mysql.jdbc.Driver
-      username: root
-      password: ArM%BG@u@mhWv0TA
+      username: drds_bj_scph1230
+      password: dWkSfAIW53CJRLUy
+      #url: jdbc:mysql://drds42g89fs73g0z.drds.aliyuncs.com:3306/drds_bj_scyhyh20180130
+      #driver-class-name: com.mysql.jdbc.Driver
+      #username: drds_bj_scyhyh20180130
+      #password: hFeAiWfv2X8nGu4Z
       initial-size: 20  #初始化连接数
       max-active: 100  #最大连接池数量
       min-idle: 5  #最小连接池数量
@@ -26,8 +30,8 @@ spring:
       web-stat-filter:  #关闭采集数据功能
         enabled: false
   redis:
-    host: 192.168.1.136
-    password:
+    host: r-uf66c43550282f54.redis.rds.aliyuncs.com
+    password: S6PRNhepnmNY3Msr
     port: 6379
     database: 0
     pool:
@@ -36,17 +40,11 @@ spring:
       max-idle: 8
       min-idle: 0
     timeout: 0
-
   zipkin:
-    base-url: http://192.168.1.178:9666
-    #base-url: http://101.132.158.228:9666
+    base-url: http://172.19.173.93:9666
   sleuth:
     sampler:
       percentage: 1
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
-ribbon:
-  ConnectTimeout: 30000
-  ReadTimeout: 60000
 
 management:
   security:
@@ -72,18 +70,15 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://192.168.1.178:8669/eureka/
-      #defaultZone: http://101.132.158.228:8669/eureka/
+      defaultZone: http://172.19.173.93:8669/eureka/
   instance:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 10
     prefer-ip-address: true
 server:
   port: 8887
-  tomcat:
-    maxHttpPostSize: 0
 mq:
-  suffix: _178
+  suffix: _feature
 identity:
   #merchNo: _000194502820238
   merchNo: _001080000000045
@@ -95,11 +90,12 @@ identity:
   url: https://at.e-unionpay.com:8580/ServletServer/Jservlet
   thirdClose: false
 
+
 wechat-redirectUrl: http://testapi.yuehuayueyou.com/v1/oauth/openweixin/receive_ticket
 wechat-appId: wx0bde1d3c4357dfdd
 wechat-appSecret: e84a08204b76cd9517a9ec5beff7fe0c
 wechat-scope: snsapi_userinfo
-wechat-redirectH5Url: https://testtm.yuehuayueyou.com
+wechat-redirectH5Url: https://m.yuehuayueyou.com
 wechat-authorURL: https://open.weixin.qq.com/connect/oauth2/authorize
 wechat-web-authorURL: https://open.weixin.qq.com/connect/qrconnect
 wechat-web-redirectUrl: http://testapi.yuehuayueyou.com/v1/oauth/openweixin/receive_ticket_web
@@ -117,33 +113,33 @@ tx-url: http://47.100.12.56:9005/api/v1/rest/blockchain/putBlock
 tx-msg-send-close: false
 # 升级
 onsaddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
-upgrade_topic: UserUpgrade_178
-upgrade_consumer_id: CID_userUpgrade_178
-upgrade_tag: userUpgradeTag_178
-search_topic: yhyy-search_178
-search_producer_id: PID_SOLRINDEX_178
-search_tag: SEARCH_UPDATE_CLONE_178
-push_topic: yhyy_push_178
-push_producer_id: PID_push_178
-push_tag: PUSHNOTIFICATION_178
+upgrade_topic: UserUpgrade_feature
+upgrade_consumer_id: CID_userUpgrade_feature
+upgrade_tag: userUpgradeTag_feature
+search_topic: yhyy-search_feature
+search_producer_id: PID_SOLRINDEX_feature
+search_tag: SEARCH_UPDATE_CLONE_feature
+push_topic: yhyy_push_feature
+push_producer_id: PID_push_feature
+push_tag: PUSHNOTIFICATION_feature
 accessKey: LTAIp2gpRJI0gvKu
 secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
 # 活积分升级
-upgrade_ac_topic: UserUpgradeAc_178
-upgrade_ac_consumer_id: CID_userUpgradeAc_178
-upgrade_ac_producer_id: PID_userUpgradeAc_178
-upgrade_ac_tag: userUpgradeAcTag_178
+upgrade_ac_topic: UserUpgradeAc_feature
+upgrade_ac_consumer_id: CID_userUpgradeAc_feature
+upgrade_ac_producer_id: PID_userUpgradeAc_feature
+upgrade_ac_tag: userUpgradeAcTag_feature
 # 固定服务中心
 operate_center_fixed: false
 ac_new_user: false
 # 关闭IM注册
-im_sign_close: true
+im_sign_close: false
 # 是否关闭获取最近距离的用户   true为关闭
 near_user_close: false
 # 结算producer_id
-rmqaward_producer_id: PID_Settle2ProductorDev
+rmqaward_producer_id: PID_Settle2ProductorTest
 # 结算topic_id
-rmqaward_topic: settle2Dev
+rmqaward_topic: settle2Test
 # 是否调用第三方短信验证接口  true为调用云信验证接口
 check_real_vercode: true
 # 创建Im账号的开始条数
@@ -163,15 +159,15 @@ disable_address: 新疆
 disable_address_no: 65
 
 #给积分推送消息MQ
-usr_upgrade_topic: YhyyUsrUpgrade_178
-usr_upgrade_producer_id: PID_YhyyUsrUpgrade_178
-usr_upgrade_tag: YhyyUsrUpgradeTag_178
+usr_upgrade_topic: YhyyUsrUpgrade_feature
+usr_upgrade_producer_id: PID_YhyyUsrUpgrade_feature
+usr_upgrade_tag: YhyyUsrUpgradeTag_feature
 
 # 更新用户信息通知钱包
-ac_user_receive_topic: AcUserReceive_178
-ac_user_receive_consumer_id: CID_AcUserReceive_178
-ac_user_receive_producer_id: PID_AcUserReceive_178
-ac_user_receive_tag: AcUserReceiveTag_178
+ac_user_receive_topic: AcUserReceive_feature
+ac_user_receive_consumer_id: CID_AcUserReceive_feature
+ac_user_receive_producer_id: PID_AcUserReceive_feature
+ac_user_receive_tag: AcUserReceiveTag_feature
 
 #查询加密后的手机号和证件号码 false（未加密的） true （加密后的）
 gain_encrypt_field: true
@@ -183,10 +179,9 @@ img_api_key: XwzVPpSYCVR4Z410FFm6qccrBqdauI6l
 img_api_secret: D3xfRj66QQfI2NJsPxufIt3accAmzfiV
 
 #
-feignclient_user: http://192.168.10.70:8632/v1/user/storeLogin
-feignclient_user_tn: http://192.168.10.70:8632/v1/user/storeLoginByTokenUserName
-feignclient_user_base: http://192.168.10.143:8634
-#---
+feignclient_user: http://172.19.173.65:18667/usr/v1/user/storeLogin
+feignclient_user_tn: http://172.19.173.65:18667/usr/v1/user/storeLoginByTokenUserName
+feignclient_user_base: http://13.230.97.182:8632
 #spring:
 #  profiles: peer1                                 # 指定profile=peer1
 #server:

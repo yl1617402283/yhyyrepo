@@ -1,0 +1,63 @@
+server:
+  port: 8170
+
+spring:
+  application:
+    name: yhyy-admn-settle-web
+  http:
+    multipart:
+      maxFileSize: 10Mb
+  datasource:
+    druid:
+      url: jdbc:mysql://rm-uf631netfs0mtd36k.mysql.rds.aliyuncs.com:3306/drds_bj_scph1230_cmiq_0000
+      driver-class-name: com.mysql.jdbc.Driver
+      username: drds_bj_scph1230
+      password: dWkSfAIW53CJRLUy
+      #url: jdbc:mysql://172.19.172.248:9899/dbysc1108
+      #driver-class-name: com.mysql.jdbc.Driver
+      #username: root
+      #password: ArM%BG@u@mhWv0TA
+      initial-size: 20
+      max-active: 100
+      min-idle: 5
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000
+      validation-query: SELECT 'x'
+      filters: stat,slf4j
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    encoding: utf-8
+    mode: LEGACYHTML5
+    prefix: classpath:/templates
+  redis:
+    host: r-uf66c43550282f54.redis.rds.aliyuncs.com
+    password: S6PRNhepnmNY3Msr
+    port: 6379
+    database: 0
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
+
+management:
+  security:
+    enabled: false
+
+mybatis:
+  check-config-location: true                          #配置校验（true/false）
+  config-location: classpath:mybatis-config.xml         #mybatis配置文件
+  mapper-locations: classpath*:mapper/**/*.xml    #mapper xml配置路径
+
+ribbon:
+  ReadTimeout: 30000              #请求处理的超时时间
+  ConnectTimeout: 5000           #ribbon请求连接的超时时间
+  MaxAutoRetries: 0
