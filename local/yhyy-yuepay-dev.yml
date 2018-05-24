@@ -30,7 +30,7 @@ spring:
 #      max-wait: -1
 #      max-idle: 8
 #      min-idle: 0
-#    timeout: 0
+#    timeout: 0g
   redis:
       host: 192.168.1.136
       password:
@@ -58,7 +58,7 @@ eureka:
     prefer-ip-address: true
 
 # 测试环境payurl统一配置
-payUrl: https://typ.yuehuayueyou.com
+payUrl: https://typ.yuepingtai.com
 
 #易宝一键支付
 yeepay:
