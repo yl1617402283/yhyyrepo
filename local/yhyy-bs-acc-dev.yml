@@ -19,8 +19,9 @@ spring:
       test-on-borrow: false
       test-on-return: false
   redis:
-    cluster:
-      nodes: 192.168.1.139:6479,192.168.1.138:6479,192.168.1.137:6479
+    host: 192.168.1.136
+    password:
+    port: 6379
     database: 0
     pool:
       max-active: 8

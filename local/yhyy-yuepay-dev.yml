@@ -21,16 +21,27 @@ spring:
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
+#  redis:
+#    cluster:
+#      nodes: 192.168.1.139:6479,192.168.1.138:6479,192.168.1.137:6479
+#    database: 0
+#    pool:
+#      max-active: 8
+#      max-wait: -1
+#      max-idle: 8
+#      min-idle: 0
+#    timeout: 0
   redis:
-    cluster:
-      nodes: 192.168.1.139:6479,192.168.1.138:6479,192.168.1.137:6479
-    database: 0
-    pool:
-      max-active: 8
-      max-wait: -1
-      max-idle: 8
-      min-idle: 0
-    timeout: 0
+      host: 192.168.1.136
+      password:
+      port: 6379
+      database: 0
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+      timeout: 0
 
 mybatis:
   check-config-location: true                          #配置校验（true/false）
@@ -253,6 +264,11 @@ unspay:
   key: 31fme6cbapvs
   quickPayUrl: http://quickpay.unspay.com/quickpay-front/quickPayWap/prePay
   callbackUrl: ${payUrl}/unspay/callbackApi
+  firstSendUrl: http://114.80.54.75/authPay-front/authPay/pay
+  secondSendUrl: http://114.80.54.75/authPay-front/authPay/pay
+  resendSmsUrl: http://114.80.54.75/authPay-front/authPay/sendVercode
+  paydUrl: http://114.80.54.75/authPay-front/authPay/confirm
+  callBack: ${payUrl}/unsVerPay/callbackApi
 
 #四方
 square:
