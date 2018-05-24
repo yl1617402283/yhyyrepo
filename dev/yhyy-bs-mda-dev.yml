@@ -80,7 +80,7 @@ server:
   port: 8083
 
 # 图片上传限制次数
-userPicUploadLimitTimes: 0
+userPicUploadLimitTimes: 5
 
 # 上传图片大小限制 (字节)
 maxUploadFileSize: 10485760
