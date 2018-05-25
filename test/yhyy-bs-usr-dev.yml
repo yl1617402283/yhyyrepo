@@ -95,7 +95,7 @@ wechat-redirectUrl: http://testapi.yuehuayueyou.com/v1/oauth/openweixin/receive_
 wechat-appId: wx0bde1d3c4357dfdd
 wechat-appSecret: e84a08204b76cd9517a9ec5beff7fe0c
 wechat-scope: snsapi_userinfo
-wechat-redirectH5Url: https://m.yuehuayueyou.com
+wechat-redirectH5Url: https://testtm.yuehuayueyou.com
 wechat-authorURL: https://open.weixin.qq.com/connect/oauth2/authorize
 wechat-web-authorURL: https://open.weixin.qq.com/connect/qrconnect
 wechat-web-redirectUrl: http://testapi.yuehuayueyou.com/v1/oauth/openweixin/receive_ticket_web
