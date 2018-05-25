@@ -38,8 +38,8 @@ spring:
       min-idle: 0
     timeout: 0
   redis2:
-      host: r-uf66c43550282f54.redis.rds.aliyuncs.com
-      password: S6PRNhepnmNY3Msr
+      host: r-uf66d90bd02919f4.redis.rds.aliyuncs.com
+      password: JY3J0V7p0bJxp4UB
       port: 6379
       database: 0
       pool:
