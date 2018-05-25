@@ -10,7 +10,7 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
   datasource:
     druid:
-      url: jdbc:mysql://rm-uf631netfs0mtd36k.mysql.rds.aliyuncs.com:3306/drds_bj_scph1230_cmiq_0000
+      url: jdbc:mysql://rm-uf66cmggonxd2i684.mysql.rds.aliyuncs.com:3306/drds_bj_scph1230_cmiq_0000
       driver-class-name: com.mysql.jdbc.Driver
       username: drds_bj_scph1230
       password: dWkSfAIW53CJRLUy
@@ -30,8 +30,8 @@ spring:
       testOnBorrow: false
       testOnReturn: false
   redis:
-    host: r-uf66c43550282f54.redis.rds.aliyuncs.com
-    password: S6PRNhepnmNY3Msr
+    host: r-uf66d90bd02919f4.redis.rds.aliyuncs.com
+    password: JY3J0V7p0bJxp4UB
     port: 6379
     database: 0
     pool:
@@ -68,7 +68,7 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://172.19.173.93:8669/eureka/
+      defaultZone: http://172.19.173.98:8669/eureka/
   instance:
     hostname: web-12   # 指定该Eureka实例的主机名
     prefer-ip-address: true

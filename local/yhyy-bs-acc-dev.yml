@@ -114,3 +114,8 @@ logging:
 #面对面付款黑名单,收款人用户编号，多个时英文逗号分隔
 qr_code:
   blacklist: 1710
+
+#coolbit钱包http地址
+coolbit:
+  mtw-ip: 47.100.223.179
+  mtw-port: 8634
