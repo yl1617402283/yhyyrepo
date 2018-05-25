@@ -76,48 +76,48 @@ server:
 
 # MQ后缀
 mq:
-  suffix: _feature
+  suffix: _wn
 
 # 商品定时任务
-mq-PRODUCERID_SEARCH: PID_SOLRINDEX_feature
-mq-TOPIC_SEARCH: yhyy-search_feature
-mq-CONSUMERID_SEARCH: CID_SOLRINDEX_feature
+mq-PRODUCERID_SEARCH: PID_SOLRINDEX_wn
+mq-TOPIC_SEARCH: yhyy-search_wn
+mq-CONSUMERID_SEARCH: CID_SOLRINDEX_wn
 
 # MQ参数
 access_key: LTAIp2gpRJI0gvKu
 secret_key: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
 onsaddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
 # 退款
-odr_refund_topic: refund_feature
-odr_refund_producer_id: PID_refund_feature
-odr_refund_tag: refund_tag_feature
+odr_refund_topic: refund_wn
+odr_refund_producer_id: PID_refund_wn
+odr_refund_tag: refund_tag_wn
 # 库存
-update_inventory_topic: updateInventory_feature
-update_inventory_producer_id: PID_updateInventory_feature
-update_inventory_tag: updateInventory_tag_feature
+update_inventory_topic: updateInventory_wn
+update_inventory_producer_id: PID_updateInventory_wn
+update_inventory_tag: updateInventory_tag_wn
 # 确认收货分账
-odr_split_topic: pay_split_feature
-odr_split_producer_id: PID_pay_split_feature
-odr_split_tag: pay_split_tag_feature
+odr_split_topic: pay_split_wn
+odr_split_producer_id: PID_pay_split_wn
+odr_split_tag: pay_split_tag_wn
 # push
-push_topic: yhyy_push_feature
-push_producer_id: PID_push_feature
-push_tag: PUSHNOTIFICATION_feature
+push_topic: yhyy_push_wn
+push_producer_id: PID_push_wn
+push_tag: PUSHNOTIFICATION_wn
 # 升级
-upgrade_topic: UserUpgrade_feature
-upgrade_producer_id: PID_userUpgrade_feature
-upgrade_tag: userUpgradeTag_feature
+upgrade_topic: UserUpgrade_wn
+upgrade_producer_id: PID_userUpgrade_wn
+upgrade_tag: userUpgradeTag_wn
 # 旧数据订单上线前处理 结算（星级订单）
-vip_data_topic: vip_data_old_feature
-vip_data_producer_id: PID_vip_data_old_feature
-vip_data_tag: vip_data_old_tag_feature
+vip_data_topic: vip_data_old_wn
+vip_data_producer_id: PID_vip_data_old_wn
+vip_data_tag: vip_data_old_tag_wn
 # serch
-PRODUCERID_SEARCH: PID_SOLRINDEX_feature
-TOPIC_SEARCH: yhyy-search_feature
+PRODUCERID_SEARCH: PID_SOLRINDEX_wn
+TOPIC_SEARCH: yhyy-search_wn
 #增加销量search
-search_topic: yhyy-search_feature
-search_producer_id: PID_SOLRINDEX_feature
-search_tag: product_sell_num_feature
+search_topic: yhyy-search_wn
+search_producer_id: PID_SOLRINDEX_wn
+search_tag: product_sell_num_wn
 
 
 #初始化数据log文件位置
