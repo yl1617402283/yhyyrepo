@@ -11,7 +11,7 @@ spring:
       maxRequestSize: 100Mb
   datasource:
     druid:
-      url: jdbc:mysql://rm-uf631netfs0mtd36k.mysql.rds.aliyuncs.com:3306/drds_bj_scph1230_cmiq_0000
+      url: jdbc:mysql://rm-uf66cmggonxd2i684.mysql.rds.aliyuncs.com:3306/drds_bj_scph1230_cmiq_0000
       driver-class-name: com.mysql.jdbc.Driver
       username: drds_bj_scph1230
       password: dWkSfAIW53CJRLUy
@@ -44,8 +44,8 @@ spring:
     mode: LEGACYHTML5
     prefix: classpath:/templates
   redis:
-    host: r-uf66c43550282f54.redis.rds.aliyuncs.com
-    password: S6PRNhepnmNY3Msr
+    host: r-uf66d90bd02919f4.redis.rds.aliyuncs.com
+    password: JY3J0V7p0bJxp4UB
     port: 6379
     database: 0
     pool:
