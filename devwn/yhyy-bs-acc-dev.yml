@@ -108,7 +108,7 @@ pay:
       pc_upgrade_url: http://testwww.yuehuayueyou.com/upgrade
 mq:
   suffix: _feature
-  mq_ONSAddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+  mq_ONSAddr: http://onsaddr-internal.aliyun.com:8080/rocketmq/nsaddr4client-internal
   ACCESS_KEY: LTAIp2gpRJI0gvKu
   SECRET_KEY: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
   BLOCK_STATUS: DOWN

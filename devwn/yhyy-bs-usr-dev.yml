@@ -112,7 +112,7 @@ wechat-binding-backUrl: https://testtm.yuehuayueyou.com/relation
 tx-url: http://47.100.12.56:9005/api/v1/rest/blockchain/putBlock
 tx-msg-send-close: false
 # 升级
-onsaddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+onsaddr: http://onsaddr-internal.aliyun.com:8080/rocketmq/nsaddr4client-internal
 upgrade_topic: UserUpgrade_wn
 upgrade_consumer_id: CID_userUpgrade_wn
 upgrade_tag: userUpgradeTag_wn

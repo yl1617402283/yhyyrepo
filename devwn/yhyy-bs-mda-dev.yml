@@ -98,7 +98,7 @@ pushConsumerId: CID_push
 pushTag: PUSHNOTIFICATION
 accessKey: LTAIp2gpRJI0gvKu
 secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
-ONSAddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+ONSAddr: http://onsaddr-internal.aliyun.com:8080/rocketmq/nsaddr4client-internal
 logTopicName: yhyy_user_log_feature
 LogConsumerId: CID_user_log_feature
 
