@@ -78,7 +78,7 @@ eureka:
 server:
   port: 8887
 mq:
-  suffix: _feature
+  suffix: _wn
 identity:
   #merchNo: _000194502820238
   merchNo: _001080000000045

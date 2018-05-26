@@ -99,8 +99,8 @@ pushTag: PUSHNOTIFICATION
 accessKey: LTAIp2gpRJI0gvKu
 secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
 ONSAddr: http://onsaddr-internal.aliyun.com:8080/rocketmq/nsaddr4client-internal
-logTopicName: yhyy_user_log_feature
-LogConsumerId: CID_user_log_feature
+logTopicName: yhyy_user_log_wn
+LogConsumerId: CID_user_log_wn
 
 #是否开启短信发送 1:开启 0:关闭
 isSendSmsCode: 1

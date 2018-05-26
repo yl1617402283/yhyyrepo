@@ -106,7 +106,7 @@ server:
     min-spare-threads: 100
 
 mq:
-  suffix: _feature
+  suffix: _wn
   url: http://onsaddr-internal.aliyun.com:8080/rocketmq/nsaddr4client-internal
   accessKey: LTAIp2gpRJI0gvKu
   secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv

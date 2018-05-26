@@ -95,7 +95,7 @@ footTypeName: foot
 historyIndexName: historycollection
 historyTypeName: history
 ONSAddr: http://onsaddr-internal.aliyun.com:8080/rocketmq/nsaddr4client-internal
-topicName: yhyy-search_feature
+topicName: yhyy-search_wn
 accessKey: LTAIp2gpRJI0gvKu
 secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
 consumerId: CID_SOLRINDEX_wn
