@@ -87,7 +87,7 @@ server:
   port: 8081
 # MQ后缀
 mq:
-   suffix: _feature
+   suffix: _wn
   #生成订单配置--生成者
 mq-save-order-topic: SaveOrder
 mq-save-order-producer-id: PID_saveOrder

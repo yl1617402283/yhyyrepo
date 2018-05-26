@@ -64,7 +64,7 @@ mybatis:
   mapper-locations: classpath*:mapper/**/*.xml    #mapper xml配置路径
 
 #MQ
-mq-suffix: _feature
+mq-suffix: _wn
 mq-PUSH_TOPIC: yhyy_push
 mq-PUSH_PRODUCER_ID: PID_push
 mq-PUSH_TAG: PUSHNOTIFICATION
