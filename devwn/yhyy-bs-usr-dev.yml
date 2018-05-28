@@ -153,7 +153,7 @@ merge_table: true
 #手机号开关（true代表ios不隐藏；false所有端都隐藏）
 check_mobile_ios: true
 #限制新疆手机号码和ip地址不允许注册，登录不受影响（true表示开关启动，限制新疆手机号码和ip地址不允许注册）
-check_mobile_ip: true
+check_mobile_ip: false
 #限制地区不允许注册(多个地区用逗号分隔;目前只对新疆进行禁用注册)
 disable_address: 新疆
 disable_address_no: 65
