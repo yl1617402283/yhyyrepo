@@ -87,7 +87,7 @@ server:
   port: 8081
 # MQ后缀
 mq:
-   suffix: _feature
+   suffix: _wn
   #生成订单配置--生成者
 mq-save-order-topic: SaveOrder
 mq-save-order-producer-id: PID_saveOrder
@@ -97,7 +97,7 @@ mq-cartitem-update-topic: CartItemUpdate
 mq-cartitem-update-consumer-id: CID_CartItemUpdate
 mq-cartitem-update-tag: CartItemTag
 
-mq-ONSAddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+mq-ONSAddr: http://onsaddr-internal.aliyun.com:8080/rocketmq/nsaddr4client-internal
 mq-accessKey: LTAIp2gpRJI0gvKu
 mq-secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
 #0:不能自提(缺省)，1：可以自提

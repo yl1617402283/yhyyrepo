@@ -199,7 +199,7 @@ yeepayyop:
 kqpay:
   cipher: 123123
   merchantAcctId: 1020993241301
-  bgUrl: https://typ.yuehuayueyou.com/kuaiqian/callbackApi
+  bgUrl: https://pay.weinishangmao.com/kuaiqian/callbackApi
   kqUrl: https://www.99bill.com/gateway/recvMerchantInfoAction.htm
   kqMobileUrl: https://www.99bill.com/mobilegateway/recvMerchantInfoAction.htm
   fail: https://testwww.yuehuayueyou.com/fail/
@@ -266,7 +266,7 @@ square:
 
 #消息队列
 mq:
-  suffix: _feature
-  mq_ONSAddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+  suffix: _wn
+  mq_ONSAddr: http://onsaddr-internal.aliyun.com:8080/rocketmq/nsaddr4client-internal
   ACCESS_KEY: LTAIp2gpRJI0gvKu
   SECRET_KEY: AfhWdaEw5zrIx9d08Z5058J4QCYEnv

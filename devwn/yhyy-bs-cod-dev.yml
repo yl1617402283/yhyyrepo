@@ -84,12 +84,12 @@ server:
     min-spare-threads: 100
 # MQ后缀
 mq:
-  suffix: _feature
+  suffix: _wn
 
 yinliuProductIds: 1,2,3,4
 vipProductIds: 1,2,3,4
 
-mq_ONSAddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+mq_ONSAddr: http://onsaddr-internal.aliyun.com:8080/rocketmq/nsaddr4client-internal
 mq_accessKey: LTAIp2gpRJI0gvKu
 mq_secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
 product_topic: yhyy-search

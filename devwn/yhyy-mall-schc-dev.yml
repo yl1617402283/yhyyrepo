@@ -86,7 +86,7 @@ mq-CONSUMERID_SEARCH: CID_SOLRINDEX_wn
 # MQ参数
 access_key: LTAIp2gpRJI0gvKu
 secret_key: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
-onsaddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+onsaddr: http://onsaddr-internal.aliyun.com:8080/rocketmq/nsaddr4client-internal
 # 退款
 odr_refund_topic: refund_wn
 odr_refund_producer_id: PID_refund_wn

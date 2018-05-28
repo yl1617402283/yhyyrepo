@@ -91,7 +91,7 @@ mq:
 # MQ参数
 access_key: LTAIp2gpRJI0gvKu
 secret_key: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
-onsaddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+onsaddr: http://onsaddr-internal.aliyun.com:8080/rocketmq/nsaddr4client-internal
 # 退款回调
 odr_refund_callback_topic: refund_cb_wn
 odr_refund_callback_consumer_id: CID_refund_cb_wn

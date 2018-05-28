@@ -52,18 +52,18 @@ eureka:
     serviceUrl:
       defaultZone: http://172.19.173.98:8669/eureka/
 mq:
-  onsaddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+  onsaddr: http://onsaddr-internal.aliyun.com:8080/rocketmq/nsaddr4client-internal
   access_key: LTAIp2gpRJI0gvKu
   secret_key: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
-  odr_split_topic: pay_split_feature
-  odr_split_producer_id: PID_pay_split_feature
-  odr_split_tag: pay_split_tag_feature
-  upgrade_topic: UserUpgrade_feature
-  upgrade_producer_id: PID_userUpgrade_feature
-  upgrade_tag: userUpgradeTag_feature
-  odr_refund_topic: refund_feature
-  odr_refund_producer_id: PID_refund_feature
-  odr_refund_tag: refund_tag_feature
+  odr_split_topic: pay_split_wn
+  odr_split_producer_id: PID_pay_split_wn
+  odr_split_tag: pay_split_tag_wn
+  upgrade_topic: UserUpgrade_wn
+  upgrade_producer_id: PID_userUpgrade_wn
+  upgrade_tag: userUpgradeTag_wn
+  odr_refund_topic: refund_wn
+  odr_refund_producer_id: PID_refund_wn
+  odr_refund_tag: refund_tag_wn
 
 #MQ
 suffix: _178
@@ -72,7 +72,7 @@ pushConsumerId: CID_push
 pushTag: PUSHNOTIFICATION
 accessKey: LTAIp2gpRJI0gvKu
 secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
-ONSAddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+ONSAddr: http://onsaddr-internal.aliyun.com:8080/rocketmq/nsaddr4client-internal
 logTopicName: yhyy_user_log_178
 LogConsumerId: CID_user_log_178
 
