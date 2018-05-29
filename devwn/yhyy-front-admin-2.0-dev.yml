@@ -64,11 +64,11 @@ mybatis:
   mapper-locations: classpath*:mapper/**/*.xml    #mapper xml配置路径
 
 #MQ
-mq-suffix: _feature
+mq-suffix: _wn
 mq-PUSH_TOPIC: yhyy_push
 mq-PUSH_PRODUCER_ID: PID_push
 mq-PUSH_TAG: PUSHNOTIFICATION
-mq-ONSADDR: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
+mq-ONSADDR: http://onsaddr-internal.aliyun.com:8080/rocketmq/nsaddr4client-internal
 mq-PRODUCERID_SEARCH: PID_SOLRINDEX
 mq-TOPIC_SEARCH:  yhyy-search
 mq-SEARCH_CONSUMER_ID: CID_SOLRINDEX

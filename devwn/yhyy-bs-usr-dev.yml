@@ -78,7 +78,7 @@ eureka:
 server:
   port: 8887
 mq:
-  suffix: _feature
+  suffix: _wn
 identity:
   #merchNo: _000194502820238
   merchNo: _001080000000045
@@ -112,23 +112,23 @@ wechat-binding-backUrl: https://testtm.yuehuayueyou.com/relation
 tx-url: http://47.100.12.56:9005/api/v1/rest/blockchain/putBlock
 tx-msg-send-close: false
 # 升级
-onsaddr: http://onsaddr-internet.aliyun.com/rocketmq/nsaddr4client-internet
-upgrade_topic: UserUpgrade_feature
-upgrade_consumer_id: CID_userUpgrade_feature
-upgrade_tag: userUpgradeTag_feature
-search_topic: yhyy-search_feature
-search_producer_id: PID_SOLRINDEX_feature
-search_tag: SEARCH_UPDATE_CLONE_feature
-push_topic: yhyy_push_feature
-push_producer_id: PID_push_feature
-push_tag: PUSHNOTIFICATION_feature
+onsaddr: http://onsaddr-internal.aliyun.com:8080/rocketmq/nsaddr4client-internal
+upgrade_topic: UserUpgrade_wn
+upgrade_consumer_id: CID_userUpgrade_wn
+upgrade_tag: userUpgradeTag_wn
+search_topic: yhyy-search_wn
+search_producer_id: PID_SOLRINDEX_wn
+search_tag: SEARCH_UPDATE_CLONE_wn
+push_topic: yhyy_push_wn
+push_producer_id: PID_push_wn
+push_tag: PUSHNOTIFICATION_wn
 accessKey: LTAIp2gpRJI0gvKu
 secretKey: AfhWdaEw5zrIx9d08Z5058J4QCYEnv
 # 活积分升级
-upgrade_ac_topic: UserUpgradeAc_feature
-upgrade_ac_consumer_id: CID_userUpgradeAc_feature
-upgrade_ac_producer_id: PID_userUpgradeAc_feature
-upgrade_ac_tag: userUpgradeAcTag_feature
+upgrade_ac_topic: UserUpgradeAc_wn
+upgrade_ac_consumer_id: CID_userUpgradeAc_wn
+upgrade_ac_producer_id: PID_userUpgradeAc_wn
+upgrade_ac_tag: userUpgradeAcTag_wn
 # 固定服务中心
 operate_center_fixed: false
 ac_new_user: false
@@ -153,21 +153,21 @@ merge_table: true
 #手机号开关（true代表ios不隐藏；false所有端都隐藏）
 check_mobile_ios: true
 #限制新疆手机号码和ip地址不允许注册，登录不受影响（true表示开关启动，限制新疆手机号码和ip地址不允许注册）
-check_mobile_ip: true
+check_mobile_ip: false
 #限制地区不允许注册(多个地区用逗号分隔;目前只对新疆进行禁用注册)
 disable_address: 新疆
 disable_address_no: 65
 
 #给积分推送消息MQ
-usr_upgrade_topic: YhyyUsrUpgrade_feature
-usr_upgrade_producer_id: PID_YhyyUsrUpgrade_feature
-usr_upgrade_tag: YhyyUsrUpgradeTag_feature
+usr_upgrade_topic: YhyyUsrUpgrade_wn
+usr_upgrade_producer_id: PID_YhyyUsrUpgrade_wn
+usr_upgrade_tag: YhyyUsrUpgradeTag_wn
 
 # 更新用户信息通知钱包
-ac_user_receive_topic: AcUserReceive_feature
-ac_user_receive_consumer_id: CID_AcUserReceive_feature
-ac_user_receive_producer_id: PID_AcUserReceive_feature
-ac_user_receive_tag: AcUserReceiveTag_feature
+ac_user_receive_topic: AcUserReceive_wn
+ac_user_receive_consumer_id: CID_AcUserReceive_wn
+ac_user_receive_producer_id: PID_AcUserReceive_wn
+ac_user_receive_tag: AcUserReceiveTag_wn
 
 #查询加密后的手机号和证件号码 false（未加密的） true （加密后的）
 gain_encrypt_field: true
