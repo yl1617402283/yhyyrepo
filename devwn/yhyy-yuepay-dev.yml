@@ -199,10 +199,10 @@ yeepayyop:
 kqpay:
   cipher: 123123
   merchantAcctId: 1020993241301
-  bgUrl: https://pay.weinishangmao.com/kuaiqian/callbackApi
+  bgUrl: http://pay.weinishangmao.com/kuaiqian/callbackApi
   kqUrl: https://www.99bill.com/gateway/recvMerchantInfoAction.htm
   kqMobileUrl: https://www.99bill.com/mobilegateway/recvMerchantInfoAction.htm
-  fail: https://testwww.yuehuayueyou.com/fail/
+  fail: http://www.weinishangmao.com/fail/
   refund:
     key: QE3DJ6B99IU8Z769
     merchantId: 10209932413
