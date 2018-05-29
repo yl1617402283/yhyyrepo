@@ -1,6 +1,23 @@
 spring:
   application:
     name: yhyy-zuul
+  datasource:                           # Mabtis数据源，用于主库操作
+    druid:
+      url: jdbc:mysql://101.132.182.194:9899/dbyscwstx
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: ArM%BG@u@mhWv0TA
+      initial-size: 20
+      max-active: 100
+      min-idle: 5
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000
+      validation-query: SELECT 'x'
+      filters: stat,slf4j
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
   http:
     multipart:
       maxFileSize: 10Mb
