@@ -23,15 +23,16 @@ spring:
       maxFileSize: 10Mb
       maxRequestSize: 100Mb
   redis:
-    cluster:
-      nodes: 192.168.1.139:6479,192.168.1.138:6479,192.168.1.137:6479
+    host: 192.168.1.136
+    password:
+    port: 6379
     database: 0
-    timeout: 666
     pool:
-      max-active: 666
-      max-wait: 1000
-      min-idle: 36
-      max-idle: 66
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
 eureka:
   client:
     healthcheck:
