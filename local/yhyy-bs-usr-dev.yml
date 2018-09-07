@@ -6,10 +6,10 @@ spring:
       maxFileSize: 10Mb
   datasource:                           # Mabtis数据源，用于主库操作
     # 使用druid数据源
-      url: jdbc:mysql://101.132.182.194:9899/dbyscwstx
+      url: jdbc:mysql://192.168.1.175:3306/0903-test
       driver-class-name: com.mysql.jdbc.Driver
       username: root
-      password: ArM%BG@u@mhWv0TA
+      password: 123456
       initial-size: 20  #初始化连接数
       max-active: 100  #最大连接池数量
       min-idle: 5  #最小连接池数量
@@ -26,8 +26,8 @@ spring:
       web-stat-filter:  #关闭采集数据功能
         enabled: false
   redis:
-    host: 192.168.1.136
-    password:
+    host: 192.168.1.129
+    password: redismima
     port: 6379
     database: 0
     pool:
