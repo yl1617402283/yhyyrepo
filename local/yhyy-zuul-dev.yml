@@ -3,10 +3,10 @@ spring:
     name: yhyy-zuul
   datasource:                           # Mabtis数据源，用于主库操作
     druid:
-      url: jdbc:mysql://101.132.182.194:9899/dbyscwstx
+      url: jdbc:mysql://192.168.1.175:3306/0903-test
       driver-class-name: com.mysql.jdbc.Driver
       username: root
-      password: ArM%BG@u@mhWv0TA
+      password: 123456
       initial-size: 20
       max-active: 100
       min-idle: 5
@@ -23,8 +23,8 @@ spring:
       maxFileSize: 10Mb
       maxRequestSize: 100Mb
   redis:
-    host: 192.168.1.136
-    password:
+    host: 192.168.1.129
+    password: redismima
     port: 6379
     database: 0
     pool:
@@ -38,7 +38,7 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://192.168.1.178:8669/eureka/
+      defaultZone: http://localhost:8669/eureka/
   instance:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 10
