@@ -1,0 +1,81 @@
+spring:
+  application: 
+    name: qmcy-qm-usr
+  http:
+    multipart:
+      maxFileSize: 10Mb
+  datasource:                           # Mabtis数据源，用于主库操作
+    # 使用druid数据源
+      url: jdbc:mysql://192.168.1.175:3306/0903-test
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: 123456
+      initial-size: 20  #初始化连接数
+      max-active: 100  #最大连接池数量
+      min-idle: 5  #最小连接池数量
+      max-wait: 60000  #获取连接时最大等待时间
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000  #连接保持空闲而不被驱逐的最小时间
+      validation-query: SELECT 'x'  #用来检测连接是否有效的SQL
+      filters: stat,slf4j
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:  #关闭监控页面
+        enabled: false
+      web-stat-filter:  #关闭采集数据功能
+        enabled: false
+  redis:
+    host: 192.168.1.129
+    password: redismima
+    port: 6379
+    database: 0
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
+
+  sleuth:
+    sampler:
+      percentage: 1
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
+ribbon:
+  ConnectTimeout: 30000
+  ReadTimeout: 60000
+
+management:
+  security:
+    enabled: false
+
+mybatis:
+  check-config-location: true                          #配置校验（true/false）
+  config-location: classpath:mybatis-config.xml         #mybatis配置文件
+  mapper-locations: classpath*:com/qmcy/mapper/*.xml    #mapper xml配置路径
+
+logging:
+  level:
+    root:  WARN
+    com:
+      yhyy:
+        controller: INFO
+        service: INFO
+        dao: INFO
+
+#service discovery url
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8669/eureka/
+      #defaultZone: http://101.132.158.228:8669/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+    prefer-ip-address: true
+server:
+  port: 8887
+  tomcat:
+    maxHttpPostSize: 0
